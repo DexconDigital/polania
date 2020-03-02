@@ -49,7 +49,7 @@ $datos_contacto = [
 		],
 		"celular" => [
 			"link"=> "+573213879190",
-			"imprimir" => "321 387 9190",
+			"imprimir" => " 321 387 9190",
 			"icono" => "fas fa-mobile-alt",
 		],
 		"whatsapp" => [

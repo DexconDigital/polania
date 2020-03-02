@@ -215,16 +215,85 @@ include 'include/header.php'; ?>
         </div>
     </div>
 </section>
-<section id="noticias" class="mt-5">
+<section id="ultimas_noticias">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="sec-title centered">
                     <h2> Últimas noticias</h2>
                     <div class="separator"></div>
+                    <div class="col-12 d-flex">
+                        <div class="col-4 mt-5">
+                            <a href="./detalle-noticia.php?co=">
+                                <div class="card">
+
+                                    <div class="imagen position-relative">
+                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
+                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <h2>Últimas Ofertas</h2>
+
+                                        <h5 class="mb-3 text-muted">2/03/2020</h5>
+
+                                        <p class="position-relative pt-3">Carta de Presentación</p>
+
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-4 mt-5">
+                            <a href="./detalle-noticia.php?co=">
+                                <div class="card">
+
+                                    <div class="imagen position-relative">
+                                        <img src="images/no_image.png" class="card-img-top" alt="...">
+                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <h2>Últimas Ofertas</h2>
+
+                                        <h5 class="mb-3 text-muted">2/03/2020</h5>
+
+                                        <p class="position-relative pt-3">Carta de Presentación</p>
+
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-4 mt-5">
+                            <a href="./detalle-noticia.php?co=">
+                                <div class="card">
+
+                                    <div class="imagen position-relative">
+                                        <img src="images/no_image.png" class="card-img-top" alt="...">
+                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
+                                    </div>
+
+                                    <div class="card-body">
+
+                                        <h2>Últimas Ofertas</h2>
+
+                                        <h5 class="mb-3 text-muted">2/03/2020</h5>
+
+                                        <p class="position-relative pt-3">Carta de Presentación</p>
+
+                                    </div>
+
+                                </div>
+                            </a>
+                        </div>
+                       
+                    </div>
                 </div>
             </div>
-           
+
         </div>
     </div>
 </section>
@@ -240,7 +309,7 @@ include 'include/header.php'; ?>
             <div class="col-11 pl-0 container">
                 <!-- <div class="owl-carousel owl-theme responsiveSlide"> -->
                 <div class="row justify-content-center d-flex align-items-center">
-                    <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/inmove.png"  alt="" class="img-responsive"></div>
+                    <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/inmove.png" alt="" class="img-responsive"></div>
                     <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/SIMI.png" alt="" class="img-responsive"></div>
                     <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/metrocuadrado.png" alt="" class="img-responsive"></div>
                     <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/protecsa.png" alt="" class=""></div>

@@ -1857,7 +1857,7 @@ img{
 	top:0px;
 	width:25px;
 	height:4px;
-	background-color:#BA3B38;
+	background-color:#F79C73;
 }
 
 .sec-title .separator:after{
@@ -1867,7 +1867,7 @@ img{
 	top:0px;
 	width:25px;
 	height:4px;
-	background-color:#383336;
+	background-color:#ED3338;
 }
 
 .sec-title.centered{
@@ -2923,7 +2923,7 @@ img{
 .main-footer .footer-bottom{
 	position:relative;
 	padding:28px 0px;
-	background-color:#061c2f;
+	background-color:#333333;
 }
 
 .main-footer .footer-bottom .copyright{
@@ -7076,4 +7076,100 @@ img{
 }
 .logo2_pse:hover{
 		transform: scale(1.1);
+}
+#ultimas_noticias{
+	margin-top: 5em;
+}
+#ultimas_noticias a:hover {
+	color: black;
+}
+#ultimas_noticias .card .animacion_ver_mas {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+}
+#ultimas_noticias .card:hover .animacion_ver_mas {
+	animation: animacion_ver_mas 350ms ease-in-out forwards;
+}
+#ultimas_noticias .card:hover img {
+	filter: brightness(0.5);
+}
+@keyframes animacion_ver_mas {
+	from {
+		top: 0%;
+		font-size: 40px;
+		opacity: 0;
+   }
+	to {
+		top: 50%;
+		font-size: 20px;
+		opacity: 1;
+   }
+}
+#ultimas_noticias .card img {
+	transition: all 350ms ease;
+	/* height: 250px; */
+}
+#ultimas_noticias .card p::before {
+	content: "";
+	left: 0;
+	top: 0;
+	width: 90%;
+	height: 1px;
+	position: absolute;
+	background-color: #F04F36;
+}
+#ultimas_noticias .card-body {
+	color: black;
+}
+#ultimas_noticias .card-body a {
+	color: white;
+}
+
+.color_icono{
+	color: #F04F36 !important;
+}
+.lista:hover{
+	color: #F79C73;
+}
+.direccion{
+	position: absolute;
+    left: 43%;
+    top: 65px;
+    z-index: 1;
+    padding: 26px 34px 22px;
+    max-width: 300px;
+	margin-bottom: 15px;
+	background-color: #F04F36;
+}
+.titulo{
+	position: relative;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 24px;
+    padding-left: 18px;
+    line-height: 1.2em;
+    margin-bottom: 18px;
+    border-left: 4px solid #1a1d1f;
+}
+.text{
+	position: relative;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6em;
+}
+#footer{
+	color: white;
+	background-color: #383336;
+}
+#color{
+	color: white !important;
+}
+
+.footer_enlace{
+	color: #F04F36 !important;
+}
+.footer_enlace:hover{
+	color: #F79C73 !important;
 }
