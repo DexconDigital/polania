@@ -224,7 +224,7 @@ include 'include/header.php'; ?>
                     <div class="separator"></div>
                     <div class="col-12 d-flex">
                         <div class="col-4 mt-5">
-                            <a href="./detalle-noticia.php?co=">
+                            <a href="#">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
@@ -236,7 +236,7 @@ include 'include/header.php'; ?>
 
                                         <h2>Últimas Ofertas</h2>
 
-                                        <h5 class="mb-3 text-muted">2/03/2020</h5>
+                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
                                         <p class="position-relative pt-3">Carta de Presentación</p>
 
@@ -246,11 +246,11 @@ include 'include/header.php'; ?>
                             </a>
                         </div>
                         <div class="col-4 mt-5">
-                            <a href="./detalle-noticia.php?co=">
+                            <a href="#">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
-                                        <img src="images/no_image.png" class="card-img-top" alt="...">
+                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
                                         <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
                                     </div>
 
@@ -258,7 +258,7 @@ include 'include/header.php'; ?>
 
                                         <h2>Últimas Ofertas</h2>
 
-                                        <h5 class="mb-3 text-muted">2/03/2020</h5>
+                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
                                         <p class="position-relative pt-3">Carta de Presentación</p>
 
@@ -268,11 +268,11 @@ include 'include/header.php'; ?>
                             </a>
                         </div>
                         <div class="col-4 mt-5">
-                            <a href="./detalle-noticia.php?co=">
+                            <a href="#">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
-                                        <img src="images/no_image.png" class="card-img-top" alt="...">
+                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
                                         <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
                                     </div>
 
@@ -280,7 +280,7 @@ include 'include/header.php'; ?>
 
                                         <h2>Últimas Ofertas</h2>
 
-                                        <h5 class="mb-3 text-muted">2/03/2020</h5>
+                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
                                         <p class="position-relative pt-3">Carta de Presentación</p>
 
@@ -289,6 +289,7 @@ include 'include/header.php'; ?>
                                 </div>
                             </a>
                         </div>
+                       
                        
                     </div>
                 </div>

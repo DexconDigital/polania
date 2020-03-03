@@ -1886,7 +1886,7 @@ pre code {
   background-color: #fff;
   border-color: #80bdff;
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(240, 79, 54, 0.29)
 }
 
 .form-control::-webkit-input-placeholder {
@@ -3236,11 +3236,13 @@ input[type="button"].btn-block {
   padding: 0.25rem 1.5rem;
   clear: both;
   font-weight: 400;
-  color: #212529;
+  color: white;
   text-align: inherit;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
+  font-size: 15px;
+  
 }
 
 .dropdown-item:hover, .dropdown-item:focus {

@@ -9,7 +9,7 @@ var modelo_inmueble = function(inmuebles){
                 '<div class="property-block col-12 col-sm-6 col-lg-4 col-xl-3">'+
                 '<div class="inner-box">'+
                 '<div class="image">'+
-                '<a href="detalle-inmueble.php?co='+inmuebles[pos].Codigo_Inmueble+'"><img src="'+inmuebles[pos].foto1+'" alt=""></a>'+
+                '<a href="detalle-inmueble.php?co='+inmuebles[pos].Codigo_Inmueble+'"><img src="images/no_image.png" alt=""></a>'+
                 '<div class="sale">'+inmuebles[pos].Gestion+'</div>'+
                 '<div class="price">$ '+inmuebles[pos].Canon+'</div>'+
                 '</div>'+

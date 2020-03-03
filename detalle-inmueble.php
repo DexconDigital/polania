@@ -1,6 +1,6 @@
 <?php $page = 'inmuebles';
 include 'include/header.php';
-$codigo = $_GET["co"]; 
+$codigo = $_GET["co"];
 $ch = curl_init();
 $headers =  'Authorization:Cj0p24oe4NvB9Cu3npAh9DRlNN0kfAeorYo3TKMh-933';
 curl_setopt($ch, CURLOPT_URL, 'http://www.simi-api.com/ApiSimiweb/response/v2/inmueble/codInmueble/' . $codigo . '');
@@ -15,7 +15,7 @@ $r = json_decode($result, true);
 ?>
 <!-- Contenido -->
 <!-- cabezera -->
-<section class="page-title" style="background-image:url(images/banner_inmuebles.png">
+<section class="page-title" style="background-image:url(images/banner_detalle_inmueble.jpg);">
     <div class="container-fluid">
         <div class="row">
         </div>
@@ -41,18 +41,18 @@ $r = json_decode($result, true);
                 <div class="property-detail">
                     <div class="inner-box">
                         <!--Upper Box-->
-                        <div class="upper-box">
-                            <h2 id="tipo_inmueble"></h2>
-                            <div class="location" id="ubicacion"></div>
+                        <div class="upper-box border">
+                            <h2 id="tipo_inmueble">Apartamento en Arriendo</h2>
+                            <div class="location" id="ubicacion"><span class="icon fa fa-map-marker"></span> Ciudad Barrio</div>
                             <ul class="post-detail">
-                                <li class="p-0" id="codigo">Codigo: </li>
-                                <!-- <li id ="tipo_inmueble"><span class="icon fa fa-calendar"></span></li> -->
-                                <!-- <li id ="precio"><span class="icon fa fa-calendar"></span></li>
-                                <li id ="administracion"><span class="icon fa fa-map-marker"></span></li>
-                                <li id ="areaConstruida"><span class="icon fa fa-map-marker"></span></li>
-                                <li id ="areaTotal"><span class="icon fa fa-map-marker"></span></li>
-                                <li id ="alcobas"><span class="icon fa fa-map-marker"></span></li>
-                                <li id ="banos"><span class="icon fa fa-map-marker"></span></li> -->
+                                <li class="p-0" id="codigo">Codigo: #</li>
+                                <li id="tipo_inmueble"><span class="icon fa fa-calendar"></span>Área</li>
+                                <li id="precio"><span class="icon fa fa-calendar"></span> Baños</li>
+                                <li id="administracion"><span class="icon fa fa-map-marker"></span>Alcobas</li>
+                                <li id="areaConstruida"><span class="icon fa fa-map-marker"></span> Garajes</li>
+                                <!-- <li id="areaTotal"><span class="icon fa fa-map-marker"></span></li>
+                                <li id="alcobas"><span class="icon fa fa-map-marker"></span></li>
+                                <li id="banos"><span class="icon fa fa-map-marker"></span></li> -->
                             </ul>
                         </div>
 
@@ -126,7 +126,7 @@ $r = json_decode($result, true);
                                 <div class="row clearfix">
                                     <div class="column col-12">
                                         <ul class="list-style-three" id="lista_caracteristicas_internas">
-                                            
+
                                         </ul>
                                     </div>
                                 </div>
@@ -144,7 +144,7 @@ $r = json_decode($result, true);
                 </div>
             </div>
             <div class="sidebar-side col-lg-4 offset-lg-0 col-md-10 offset-md-1 col-sm-12 col-xs-12">
-                <aside class="sidebar" >
+                <aside class="sidebar">
                     <!-- Properties Posts -->
                     <div class="sidebar-widget properties-posts" id="p_similares">
                         <div class="sidebar-title">
@@ -165,11 +165,11 @@ $r = json_decode($result, true);
 <!-- footer -->
 <?php include 'include/footer.php'; ?>
 <?php echo "<script> var codigoInmueble ='" . $codigo . "';</script>"; ?>
-<script src="conexion_api/token_api.js"></script>
-<script src="conexion_api/validadores.js"></script>
-<script src="conexion_api/detalle_inmueble.js"></script>
-<script src="conexion_api/modelo_inmueble.js"></script>
-<script src="conexion_api/similares.js"></script>
+<!-- <script src="conexion_api/token_api.js"></script> -->
+<!-- <script src="conexion_api/validadores.js"></script> -->
+<!-- <script src="conexion_api/detalle_inmueble.js"></script> -->
+<!-- <script src="conexion_api/modelo_inmueble.js"></script> -->
+<!-- <script src="conexion_api/similares.js"></script> -->
 <!-- <script src="conexion_api/similares.js"></script> -->
 </body>
 

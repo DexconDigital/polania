@@ -144,23 +144,28 @@ require './variables/variables.php';
                             <div class="navbar-collapse collapse clearfix">
                                 <ul class="navigation clearfix">
                                     <li class="item <?php if ($page == 'inicio') {
-                                                    echo 'current';
-                                                } ?>"><a class="items_menu" href="./index.php">Inicio</a></li>
+                                                        echo 'current';
+                                                    } ?>"><a class="items_menu" href="./index.php">Inicio</a></li>
                                     <li class="item <?php if ($page == 'quienes') {
-                                                    echo 'current';
-                                                } ?>"><a href="./quienes-somos.php">Quienes Somos</a></li>
+                                                        echo 'current';
+                                                    } ?>"><a href="./quienes-somos.php">Quienes Somos</a></li>
                                     <li class="item <?php if ($page == 'inmuebles') {
-                                                    echo 'current';
-                                                } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
-                                    <li class="item <?php if ($page == 'clientes') {
-                                                    echo 'current';
-                                                } ?>"><a href="./clientes.php">Clientes</a></li>
-                                    <li class="item <?php if ($page == 'clientes') {
-                                                    echo 'current';
-                                                } ?>"><a href="./clientes.php">Blog</a></li>
+                                                        echo 'current';
+                                                    } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"  style="padding: 12px 22px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
+                                        <div class="dropdown-menu" style="background-color: #66302E;">
+                                            <a class="dropdown-item" href="#"> Arrendatarios</a>
+                                            <a class="dropdown-item" href="#"> Propietarios</a>
+                                            <a class="dropdown-item" href="#"> Pagos PSE</a>
+                                        </div>
+                                    </li>
+                                    <li class="item <?php if ($page == 'blog') {
+                                                        echo 'current';
+                                                    } ?>"><a href="./blog.php">Blog</a></li>
                                     <li class="item <?php if ($page == 'contacto') {
-                                                    echo 'current';
-                                                } ?>"><a href="./contacto.php">Contáctenos</a></li>
+                                                        echo 'current';
+                                                    } ?>"><a href="./contacto.php">Contáctenos</a></li>
                                     <li>
                                         <a href="#" target="_blank" class="p-0"> <img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo_pse" style="width:3.8em;"></a>
                                     </li>
@@ -229,21 +234,29 @@ require './variables/variables.php';
 
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
-                                <li class="<?php if ($page == 'inicio') {
+                                <li class=" <?php if ($page == 'inicio') {
                                                 echo 'current';
                                             } ?>"><a href="./index.php">Inicio</a></li>
-                                <li class="item<?php if ($page == 'quienes') {
-                                                echo 'current';
-                                            } ?>"><a href="./quienes-somos.php">Quienes Somos</a></li>
-                                <li class="item<?php if ($page == 'inmuebles') {
-                                                echo 'current';
-                                            } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
-                                <li class="item<?php if ($page == 'clientes') {
-                                                echo 'current';
-                                            } ?>"><a href="./clientes.php">Clientes</a></li>
-                                <li class="item<?php if ($page == 'contacto') {
-                                                echo 'current';
-                                            } ?>"><a href="./contacto.php">Contáctenos</a></li>
+                                <li class="item <?php if ($page == 'quienes') {
+                                                    echo 'current';
+                                                } ?>"><a href="./quienes-somos.php">Quienes Somos</a></li>
+                                <li class="item <?php if ($page == 'inmuebles') {
+                                                    echo 'current';
+                                                } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
+                                <li class="nav-item dropdown item">
+                                    <a class="nav-link dropdown-toggle" style="padding: 16px 22px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
+                                    <div class="dropdown-menu">
+                                        <a id="hover" class="dropdown-item" style="color: black" href="#"> Arrendatarios</a>
+                                        <a id="hover" class="dropdown-item" style="color: black" href="#"> Propietarios</a>
+                                        <a id="hover" class="dropdown-item" style="color: black" href="#"> Pagos PSE</a>
+                                    </div>
+                                </li>
+                                <li class="item <?php if ($page == 'blog') {
+                                                    echo 'current';
+                                                } ?>"><a href="./blog.php">Blog</a></li>
+                                <li class="item <?php if ($page == 'contacto') {
+                                                    echo 'current';
+                                                } ?>"><a href="./contacto.php">Contáctenos</a></li>
                                 <li>
                                     <a href="#" target="_blank" class="p-0 pt-2"><img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo2_pse" style="width:3.5em;"></a>
                                 </li>
