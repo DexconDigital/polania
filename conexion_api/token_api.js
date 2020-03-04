@@ -1,1 +1,2 @@
-const TOKEN = 'Cj0p24oe4NvB9Cu3npAh9DRlNN0kfAeorYo3TKMh-933';
+const TOKEN = '';
+const PROTOCOLO = 'http';

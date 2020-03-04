@@ -49,23 +49,17 @@
                         <!-- baños -->
                         <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for="">Baños</label>
-                            <select class="form-control" id="barrio_buscar">
-                                <option selected disabled value=0>Baños</option>
-                            </select>
+                            <input type="number" placeholder="Precio Máximo" id="precio_maximo_buscar" class="form-control">
                         </div>
                         <!--  Alcobas -->
                         <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for=""> Alcobas</label>
-                            <select class="form-control" id="barrio_buscar">
-                                <option selected disabled value=0>Alcobas</option>
-                            </select>
+                            <input type="number" placeholder="Precio Máximo" id="precio_maximo_buscar" class="form-control">
                         </div>
                         <!--  Garajes -->
                         <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for=""> Garajes</label>
-                            <select class="form-control" id="barrio_buscar">
-                                <option selected disabled value=0>Garajes</option>
-                            </select>
+                            <input type="number" placeholder="Precio Máximo" id="precio_maximo_buscar" class="form-control">
                         </div>
                         <!-- Área Máxima -->
                         <div class="form-group col-12 col-md-6 col-lg-3">

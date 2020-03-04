@@ -19,132 +19,137 @@ $(document).ready(function () {
         }
     });
 
-    // Funcion para cargar departamentos, ciudades y barrios
-    $.ajax({
-        url: 'https://www.simi-api.com/ApiSimiweb/response/v2/departamento',
-        type: 'GET',
-        beforeSend: function (xhr) {
-            xhr.setRequestHeader(
-                'Authorization',
-                'Basic ' + btoa('Authorization:' + TOKEN));
-        },
-        'dataType': "json",
-         success: function (depto) {
-            for (var i = 0; i < depto.length; i++) {
-                // Funcion para traer ciudades
-                $.ajax({
-                    url: 'https://www.simi-api.com/ApiSimiweb/response/v2/ciudad/idDepartamento/' + depto[i].id,
-                    type: 'GET',
-                    beforeSend: function (xhr) {
-                        xhr.setRequestHeader(
-                            'Authorization',
-                            'Basic ' + btoa('Authorization:' + TOKEN));
-                    },
-                    'dataType': "json",
-                    success: function (ciudad) {
-                        var ciudades_resultados = " ";
-                        for (var i = 0; i < ciudad.length; i++) {
-                            ciudades_resultados +=
-                                '<option value="' + ciudad[i].id + '">' +
+  
+        // Funcion para cargar departamentos, ciudades y barrios
+        $.ajax({
+            url: PROTOCOLO + '://www.simi-api.com/ApiSimiweb/response/v2/departamento',
+            type: 'GET',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                    'Authorization',
+                    'Basic ' + btoa('Authorization:' + TOKEN));
+            },
+            'dataType': "json",
+            success: function (depto) {
+                for (var i = 0; i < depto.length; i++) {
+                    // Funcion para traer ciudades
+                    $.ajax({
+                        url: PROTOCOLO + '://www.simi-api.com/ApiSimiweb/response/v2/ciudad/idDepartamento/' + depto[i].id,
+                        type: 'GET',
+                        beforeSend: function (xhr) {
+                            xhr.setRequestHeader(
+                                'Authorization',
+                                'Basic ' + btoa('Authorization:' + TOKEN));
+                        },
+                        'dataType': "json",
+                        success: function (ciudad) {
+                            var ciudades_resultados = " ";
+                            for (var i = 0; i < ciudad.length; i++) {
+                                ciudades_resultados +=
+                                    '<option value="' + ciudad[i].id + '">' +
                                     ciudad[i].nombre +
-                                '</option>';
+                                    '</option>';
+                            }
+                            $('#ciudad_buscar').append(ciudades_resultados);
+                            // Funcion para traer barrios
                         }
-                        $('#ciudad_buscar').append(ciudades_resultados);
-                        // Funcion para traer barrios
-                        $("#ciudad_buscar").change(function () {
-                            var ciudad_id = $("#ciudad_buscar option:selected").val();
-                            // Limpia el selected de los barrios cada vez que se cambia de ciudad
-                            $('#barrio_buscar').empty();
-                                $.ajax({
-                                    url: 'http://www.simi-api.com/ApiSimiweb/response/v2/barrios/idCiudad/' + ciudad_id,
-                                    type: 'GET',
-                                    beforeSend: function (xhr) {
-                                        xhr.setRequestHeader(
-                                            'Authorization',
-                                            'Basic ' + btoa('Authorization:' + TOKEN));
-                                    },
-                                    'dataType': "json",
-                                    success: function (barrios) {
-                                        var barrios_resultados = " ";
-                                        barrios_resultados +=
-                                                '<option value="0">Barrio</option>';
-                                        for (var i = 0; i < barrios.length; i++) {
-                                            barrios_resultados +=
-                                                '<option value="' + barrios[i].id + '">' +
-                                                barrios[i].nombre +
-                                                '</option>';
-                                        }
-                                        $('#barrio_buscar').append(barrios_resultados);
-                                    }
-                                });
-                        });
+                    });
+                }
+            }
+        });
 
+        $("#ciudad_buscar").change(function () {
+            var ciudad_id = $("#ciudad_buscar option:selected").val();
+            // Limpia el selected de los barrios cada vez que se cambia de ciudad
+            $('#barrio_buscar').empty();
+            $.ajax({
+                url: PROTOCOLO + '://www.simi-api.com/ApiSimiweb/response/v2/barrios/idCiudad/' + ciudad_id,
+                type: 'GET',
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader(
+                        'Authorization',
+                        'Basic ' + btoa('Authorization:' + TOKEN));
+                },
+                'dataType': "json",
+                success: function (barrios) {
+                    var barrios_resultados = " ";
+                    barrios_resultados +=
+                        '<option value="0">Barrio</option>';
+                    for (var i = 0; i < barrios.length; i++) {
+                        barrios_resultados +=
+                            '<option value="' + barrios[i].id + '">' +
+                            barrios[i].nombre +
+                            '</option>';
                     }
-                });
+                    $('#barrio_buscar').append(barrios_resultados);
+                }
+            });
+        });
+        // Funcion para traer tipo de gestion ejm: "arriendo, venta etc."
+        $.ajax({
+            url: PROTOCOLO + '://www.simi-api.com/ApiSimiweb/response/gestion',
+            type: 'GET',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                    'Authorization',
+                    'Basic ' + btoa('Authorization:' + TOKEN));
+            },
+            'dataType': "json",
+            success: function (gestion) {
+                //Eliminar un campo del array 
+                gestion.splice(2, 1)
+
+
+                var gestion_resultados = " ";
+                for (var i = 0; i < gestion.length; i++) {
+
+                    gestion_resultados +=
+                        '<option value="' + gestion[i].idGestion + '">' +
+                        gestion[i].Nombre +
+                        '</option>';
+
+
+                }
+                $('#tipo_gestion_buscar').append(gestion_resultados);
+
             }
-        }
-    });
+        });
 
-    // Funcion para traer tipo de gestion ejm: "arriendo, venta etc."
-    $.ajax({
-        url: 'https://www.simi-api.com/ApiSimiweb/response/gestion',
-           type: 'GET',
-           beforeSend: function (xhr) {
-           xhr.setRequestHeader(
-              'Authorization',
-              'Basic ' + btoa('Authorization:'+TOKEN));
-           },
-           'dataType': "json",
-           success:function(gestion)
-           {
-            var gestion_resultados = " ";
-            for (var i = 0; i < gestion.length; i++) {
-                gestion_resultados +=
-                '<option value="' + gestion[i].idGestion + '">' +
-                    gestion[i].Nombre +
-                    '</option>';
+        // Funcion que trae el tipo de inmueble ejm: apartamento casa etc
+        $.ajax({
+            url: PROTOCOLO + '://www.simi-api.com/ApiSimiweb/response/v2/tipoInmuebles/unique/1',
+            type: 'GET',
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader(
+                    'Authorization',
+                    'Basic ' + btoa('Authorization:' + TOKEN));
+            },
+            'dataType': "json",
+            success: function (operacion) {
+                var operacion_resultados = " ";
+                for (var i = 0; i < operacion.length; i++) {
+                    operacion_resultados +=
+                        '<option value="' + operacion[i].idTipoInm + '">' +
+                        operacion[i].Nombre +
+                        '</option>';
+                }
+                $('#tipo_inmueble_buscar').append(operacion_resultados);
             }
-            $('#tipo_gestion_buscar').append(gestion_resultados);
-           }             
-       });
 
-    // Funcion que trae el tipo de inmueble ejm: apartamento casa etc
-    $.ajax({
-        url: 'http://www.simi-api.com/ApiSimiweb/response/v2/tipoInmuebles/unique/1',
-           type: 'GET',
-           beforeSend: function (xhr) {
-           xhr.setRequestHeader(
-              'Authorization',
-              'Basic ' + btoa('Authorization:'+TOKEN));
-           },
-           'dataType': "json",
-           success:function(operacion)
-           {
-              console.log(operacion);
-              var operacion_resultados = " ";
-              for (var i = 0; i < operacion.length; i++) {
-                  operacion_resultados +=
-                    '<option value="' + operacion[i].idTipoInm + '">' +
-                      operacion[i].Nombre +
-                      '</option>';
-              }
-              $('#tipo_inmueble_buscar').append(operacion_resultados);
-             }
-                       
-       });
+        });
 
-    // Buscar por medio del boton creado en el buscador
-    $('#buscar').click(function () {
-        busqueda();
-    });
-
-    // buscar por medio de la tecla enter
-    $('body').keyup(function(e) {
-        if(e.keyCode == 13) {
+        // Buscar por medio del boton creado en el buscador
+        $('#buscar').click(function () {
             busqueda();
-        }
+        });
+
+        // buscar por medio de la tecla enter
+        $('body').keyup(function (e) {
+            if (e.keyCode == 13) {
+                busqueda();
+            }
+        });
     });
-});
 
 // Definir las variables que se van a usar para almacenar los datos que se traen del buscador
 var code, ciudad_buscar, barrio_buscar, gestion_buscar, tipo_inmueble_buscar, alcobas_buscar, banos_buscar, maximo_buscar, minimo_buscar;
