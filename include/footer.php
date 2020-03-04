@@ -93,7 +93,7 @@
         <div class="col-6 mt-3 container">
             <div class="sec-title">
                 <div class="title">Contáctenos</div>
-                <h2 id="color">Datos de Contacto</h2>
+                <h2 id="color" style="font-size:30px">Datos de Contacto</h2>
                 <div class="separator"></div>
                 <ul class="mt-5">
                     <li class="mb-4 lista"><span class="color_icono icon fas fas fa-phone"></span><a href="tel:<?php echo $datos_contacto['telefono_fijo']['link'] ?>" class="ml-4" style="color:inherit;"><?php echo $datos_contacto['telefono_fijo']['imprimir'] ?></a></li>
@@ -103,7 +103,7 @@
                     <li class="mb-4 lista"><span class="color_icono icon fas fas fa-calendar-alt"></span><span class="ml-4"><?php echo $datos_contacto['horario']['horario'] ?></span></li>
                 </ul>
                 <div class="sec-title">
-                    <h2 id="color">Descargar formularios</h2>
+                    <h2 id="color" style="font-size:30px">Descargar formularios</h2>
                     <div class="separator"></div>
                     <ul class="mt-5">
                         <li class="mb-4 lista"><span class="color_icono icon far fa-file-pdf"></span><a href="#" target="_blanck" class="ml-4" style="color:inherit;"> Protecsa</a></li>

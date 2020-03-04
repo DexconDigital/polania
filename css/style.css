@@ -592,7 +592,7 @@ img{
 
 .header-top-one .inner-container{
 	position:relative;
-	border-bottom:1px solid white;
+	/* border-bottom:1px solid white; */
 }
 
 .header-top-one .top-left{
@@ -1829,7 +1829,7 @@ img{
 	position:relative;
 	font-size:18px;
 	color:#F27852;
-	font-weight:500;
+	font-weight:900;
 	margin-bottom:20px;
 	font-family: 'meta normal lf';
 }
@@ -3022,7 +3022,7 @@ img{
 }
 
 .services-block .inner-box:hover{
-	border-color:#333333;
+	border-color:#F04F36;
 }
 
 .services-block .inner-box .icon-box{
@@ -4980,7 +4980,7 @@ img{
 	color:#1a1d1f;
 	font-size:18px;
 	line-height:1.7em;
-	font-weight:700;
+	/* font-weight:700; */
 	margin-bottom:35px;
 }
 

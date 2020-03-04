@@ -92,7 +92,7 @@ require './variables/variables.php';
             <div class="container-fluid">
                 <div class="inner-container clearfix">
                     <!--Top Left-->
-                    <div class="top-left">
+                    <div class="top-left ml-4">
                         <ul class="links clearfix">
                             <li><a href="mailto:<?php echo $datos_contacto['correo']['correo'] ?>"><i class="far fa-envelope mr-2 icono_correo"></i><?php echo $datos_contacto['correo']['correo'] ?></a></li>
                         </ul>
@@ -106,7 +106,7 @@ require './variables/variables.php';
                                 <!-- <li><a href=""><img src="images/twitter.png" alt="icon twitter" style="height:22px; width:auto;"></li> -->
                                 <!-- <li><a target="_blank" href="https://www.instagram.com/grr_fincaraiz/?hl=es-la"><img src="images/instagram.png" alt="icon facebook" style="height:22px; width:auto;"></a></li> -->
                                 <!-- <li><a target="_blank" href="https://www.youtube.com/channel/UCDw7z49ZfgvhMU_oCVGnpbw?view_as=subscriber"><img src="images/youtube.png" alt="icon youtube" style="height:22px; width:auto;"></a></li> -->
-                                <li><a target="_blank" href="<?php echo $datos_contacto['whatsapp']['link'] ?>"><img src="images/whatsapp.png" alt="icon whatsapp" style="height:22px; width:auto;"></a></li>
+                                <li><a target="_blank" href="<?php echo $datos_contacto['whatsapp']['link'] ?>"><img src="images/whatsapp.png" alt="icon whatsapp" style="height:26px; width:auto;"></a></li>
                             </ul>
                         </div>
                         <ul class="number">
@@ -167,7 +167,7 @@ require './variables/variables.php';
                                                         echo 'current';
                                                     } ?>"><a href="./contacto.php">Contáctenos</a></li>
                                     <li>
-                                        <a href="#" target="_blank" class="p-0"> <img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo_pse" style="width:3.8em;"></a>
+                                        <a href="#" target="_blank" class="p-0 ml-3"> <img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo_pse" style="width:3.8em;"></a>
                                     </li>
                                 </ul>
                             </div>

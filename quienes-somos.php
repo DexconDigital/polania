@@ -161,7 +161,7 @@ include 'include/header.php'; ?>
                                             <li style="list-style: square;">
                                                 <?php echo $texto_servicios['arriendos']['parrafos'][1] ?>
                                             </li>
-                                            <li style="list-style: square;"> 
+                                            <li style="list-style: square;">
                                                 <?php echo $texto_servicios['arriendos']['parrafos'][2] ?>
                                             </li>
                                             <li style="list-style: square;">
@@ -170,7 +170,7 @@ include 'include/header.php'; ?>
                                             <li style="list-style: square;">
                                                 <?php echo $texto_servicios['arriendos']['parrafos'][4] ?>
                                             </li>
-                                            <li style="list-style: square;">
+                                            <li style="list-style: square;" class="mt-2">
                                                 <?php echo $texto_servicios['arriendos']['parrafos'][5] ?>
                                             </li>
 
@@ -195,19 +195,20 @@ include 'include/header.php'; ?>
                                 <font style="vertical-align: inherit;">
                                     <font style="vertical-align: inherit;">
                                         <ul>
-                                             <li style="list-style: square;">
+                                            <li style="list-style: square;">
                                                 <?php echo $texto_servicios['ventas']['parrafos'][0] ?>
                                             </li>
-                                             <li style="list-style: square;">
+                                            <li style="list-style: square;">
                                                 <?php echo $texto_servicios['ventas']['parrafos'][1] ?>
                                             </li>
-                                             <li style="list-style: square;">
+                                            <li style="list-style: square;">
                                                 <?php echo $texto_servicios['ventas']['parrafos'][2] ?>
                                             </li>
-                                             <li style="list-style: square;">
+                                            <li style="list-style: square;">
                                                 <?php echo $texto_servicios['ventas']['parrafos'][3] ?>
                                             </li>
-                                            <br><br>
+                                            <div class="" style="margin-bottom: 50px;">
+                                            </div>
                                         </ul>
                                     </font>
                                 </font>
@@ -239,7 +240,8 @@ include 'include/header.php'; ?>
                                             <li style="list-style: square;">
                                                 <?php echo $texto_servicios['asesorias']['parrafos'][2] ?>
                                             </li>
-                                            <br><br>
+                                            <div class="" style="margin-bottom: 208px;">
+                                            </div>
                                         </ul>
                                     </font>
                                 </font>
