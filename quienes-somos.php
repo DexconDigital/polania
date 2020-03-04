@@ -8,12 +8,12 @@ include 'include/header.php'; ?>
         </div>
         <div class="col-10 offset-1">
             <div class="pull-left">
-                <h1>Quienes somos</h1>
+                <h1>Quiénes somos</h1>
             </div>
             <div class="pull-right">
                 <ul class="page-breadcrumb">
                     <li><a href="index.html">Inicio</a></li>
-                    <li>Quienes somos</li>
+                    <li>Quiénes somos</li>
                 </ul>
             </div>
         </div>
@@ -59,7 +59,7 @@ include 'include/header.php'; ?>
                 <div class="col-6 pr-0">
                     <!--Image Column-->
                     <div class="image-column col-12  col-md-12 d-flex pr-0  aling-items-center text-center">
-                        <img src="images/no_image.png" alt="imagen que acompaña el quienes somos de la empresa." style="width:100%; height:100%;">
+                        <img src="images/quienes_somos.jpg" alt="imagen que acompaña el quienes somos de la empresa." style="width:100%; height:100%;">
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@ include 'include/header.php'; ?>
             <div class="content-column col-12 col-md-11  ml-0 d-flex align-items-center">
                 <div class="col-6  ">
                     <div class="image-column col-12  col-md-12 d-flex  aling-items-center text-center">
-                        <img src="images/no_image.png" alt="imagen que acompaña el quienes somos de la empresa." style="width:100%; height:100%;">
+                        <img src="images/valores.jpg" alt="imagen que acompaña el quienes somos de la empresa." style="width:100%; height:100%;">
                     </div>
                 </div>
                 <div class="col-6 ">
@@ -144,7 +144,7 @@ include 'include/header.php'; ?>
                     <div class="services-block col-lg-4 col-md-6 col-xs-12">
                         <div class="inner-box">
                             <div class="icon-box">
-                                <span class="icon flaticon-house-2"></span>
+                                <span class="fas fa-sign"></span>
                             </div>
                             <h3 class="mb-1"><a href="property-detail.html">
                                     <font style="vertical-align: inherit;">
@@ -184,7 +184,7 @@ include 'include/header.php'; ?>
                     <div class="services-block col-lg-4 col-md-6 col-xs-12">
                         <div class="inner-box">
                             <div class="icon-box">
-                                <span class="icon flaticon-house-1"></span>
+                                <span class="fas fa-tags"></span>
                             </div>
                             <h3><a href="">
                                     <font style="vertical-align: inherit;">
@@ -219,7 +219,7 @@ include 'include/header.php'; ?>
                     <div class="services-block col-lg-4 col-md-6 col-xs-12">
                         <div class="inner-box">
                             <div class="icon-box">
-                                <span class="icon flaticon-analytics"></span>
+                                <span class="fas fa-gavel"></span>
                             </div>
                             <h3><a href="property-detail.html">
                                     <font style="vertical-align: inherit;">

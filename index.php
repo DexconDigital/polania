@@ -220,6 +220,7 @@ include 'include/header.php'; ?>
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="sec-title centered">
+                    <div class="title">Entradas recientes</div>
                     <h2> Últimas noticias</h2>
                     <div class="separator"></div>
                     <div class="col-12 d-flex">
@@ -289,8 +290,8 @@ include 'include/header.php'; ?>
                                 </div>
                             </a>
                         </div>
-                       
-                       
+
+
                     </div>
                 </div>
             </div>
@@ -303,6 +304,7 @@ include 'include/header.php'; ?>
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="sec-title centered">
+                    <div class="title">Trabajamos con los mejores</div>
                     <h2>Nuestros aliados</h2>
                     <div class="separator"></div>
                 </div>

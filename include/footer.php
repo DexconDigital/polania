@@ -92,6 +92,7 @@
     <div class="col-12 d-flex p-0">
         <div class="col-6 mt-3 container">
             <div class="sec-title">
+                <div class="title">Contáctenos</div>
                 <h2 id="color">Datos de Contacto</h2>
                 <div class="separator"></div>
                 <ul class="mt-5">

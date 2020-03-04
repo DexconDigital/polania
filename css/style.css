@@ -5392,7 +5392,7 @@ img{
 	top:0px;
 	width:25px;
 	height:4px;
-	background-color:#1a1d1f;
+	background-color:#F79C73;
 }
 
 .sidebar .sidebar-title .separator:after{
@@ -5402,7 +5402,7 @@ img{
 	top:0px;
 	width:25px;
 	height:4px;
-	background-color:#092f50;
+	background-color:#ED3338;
 }
 
 /*Property Form Widget*/
@@ -5569,7 +5569,7 @@ img{
 
 .property-detail .inner-box .upper-box .location{
 	position:relative;
-	color:#092f50;
+	color:#F04F36;
 	font-size:14px;
 	font-weight:700;
 	margin-bottom:25px;
@@ -7135,7 +7135,7 @@ img{
 .direccion{
 	position: absolute;
     left: 43%;
-    top: 65px;
+    top: 120px;
     z-index: 1;
     padding: 26px 34px 22px;
     max-width: 300px;
@@ -7176,4 +7176,8 @@ img{
 #hover:hover{
 	background-color: #F04F36 !important;
 	color: white !important;
+}
+
+.texto_detalle{
+	text-transform: uppercase;
 }

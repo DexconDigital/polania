@@ -148,7 +148,7 @@ require './variables/variables.php';
                                                     } ?>"><a class="items_menu" href="./index.php">Inicio</a></li>
                                     <li class="item <?php if ($page == 'quienes') {
                                                         echo 'current';
-                                                    } ?>"><a href="./quienes-somos.php">Quienes Somos</a></li>
+                                                    } ?>"><a href="./quienes-somos.php">Quiénes Somos</a></li>
                                     <li class="item <?php if ($page == 'inmuebles') {
                                                         echo 'current';
                                                     } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
@@ -239,7 +239,7 @@ require './variables/variables.php';
                                             } ?>"><a href="./index.php">Inicio</a></li>
                                 <li class="item <?php if ($page == 'quienes') {
                                                     echo 'current';
-                                                } ?>"><a href="./quienes-somos.php">Quienes Somos</a></li>
+                                                } ?>"><a href="./quienes-somos.php">Quiénes Somos</a></li>
                                 <li class="item <?php if ($page == 'inmuebles') {
                                                     echo 'current';
                                                 } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
