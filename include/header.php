@@ -155,8 +155,8 @@ require './variables/variables.php';
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle"  style="padding: 12px 22px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
                                         <div class="dropdown-menu" style="background-color: #66302E;">
-                                            <a class="dropdown-item" href="#"> Arrendatarios</a>
-                                            <a class="dropdown-item" href="#"> Propietarios</a>
+                                            <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck"> Arrendatarios</a>
+                                            <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck"> Propietarios</a>
                                             <a class="dropdown-item" href="#"> Pagos PSE</a>
                                         </div>
                                     </li>
@@ -246,8 +246,8 @@ require './variables/variables.php';
                                 <li class="nav-item dropdown item">
                                     <a class="nav-link dropdown-toggle" style="padding: 16px 22px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
                                     <div class="dropdown-menu">
-                                        <a id="hover" class="dropdown-item" style="color: black" href="#"> Arrendatarios</a>
-                                        <a id="hover" class="dropdown-item" style="color: black" href="#"> Propietarios</a>
+                                        <a id="hover" class="dropdown-item" style="color: black" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck"> Arrendatarios</a>
+                                        <a id="hover" class="dropdown-item" style="color: black" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck"> Propietarios</a>
                                         <a id="hover" class="dropdown-item" style="color: black" href="#"> Pagos PSE</a>
                                     </div>
                                 </li>
