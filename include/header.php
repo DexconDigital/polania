@@ -153,7 +153,7 @@ require './variables/variables.php';
                                                         echo 'current';
                                                     } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle"  style="padding: 12px 22px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
+                                        <a class="nav-link dropdown-toggle" style="padding: 12px 22px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
                                         <div class="dropdown-menu" style="background-color: #66302E;">
                                             <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck"> Arrendatarios</a>
                                             <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck"> Propietarios</a>
@@ -216,7 +216,9 @@ require './variables/variables.php';
             <div class="container-fluid">
                 <!--Logo-->
                 <div class="logo pull-left">
-                    <img src="./images/polania_color.png" alt="">
+                    <a href="index.php" class="">
+                        <img src="./images/polania_color.png" alt="">
+                    </a>
                 </div>
 
                 <!--Right Col-->

@@ -326,12 +326,7 @@ include 'include/header.php'; ?>
 <!-- footer -->
 <?php include 'include/footer.php'; ?>
 <!-- fin footer -->
-<!-- Conexion api -->
-<script src="conexion_api/token_api.js"></script>
-<script src="conexion_api/validadores.js"></script>
-<script src="conexion_api/buscador.js"></script>
-<!-- <script src="conexion_api/modelo_inmueble.js"></script> -->
-<!-- <script src="conexion_api/inmuebles_destacados.js"></script> -->
+<?php include 'include/archivos_footer.php' ?>
 </body>
 
 </html>

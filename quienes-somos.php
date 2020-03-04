@@ -49,7 +49,7 @@ include 'include/header.php'; ?>
                         <div class="bold-text">
                             <font style="vertical-align: inherit;">
                                 <font style="vertical-align: inherit; text-aling:justify;">
-                                    <?php echo $texto_quienes_somos['quienes_somos']['parrafos'][0] ?><br>
+                                    <?php echo $texto_quienes_somos['quienes_somos']['parrafos'][0] ?><br><br>
                                     <?php echo $texto_quienes_somos['quienes_somos']['parrafos'][1] ?>
                                 </font>
                             </font>
