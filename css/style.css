@@ -2231,7 +2231,9 @@ img{
 .property-block .inner-box .image img{
 	position:relative;
 	width:100%;
-	display:block;
+	display: block;
+    height: 300px;
+    object-fit: cover;
 }
 
 .property-block .inner-box .image .sale{
@@ -7181,3 +7183,38 @@ img{
 .texto_detalle{
 	text-transform: uppercase;
 }
+
+#inmuebles{
+	margin-top: 8%;
+}
+.card{
+	border: 1px solid rgba(240, 79, 54, 0.16) !important;
+}
+.card-header{
+	background-color: #d1d4d63b !important;
+    border-bottom: 1px solid #f79c736e !important;
+}
+.enlaces{
+	text-decoration: none !important;
+    color: #BA3B38;
+}
+.btn-link:focus, .btn-link.focus{
+	text-decoration: none !important;
+    box-shadow: none;
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus{
+	outline: inherit !important;
+    outline-offset: -2px;	
+}
+.biñeta{
+	list-style: square;
+	
+}
+.acesor_enlace{
+	text-decoration: none !important;
+	color: #BA3B38;
+}
+.acesor_enlace:hover{
+	color: #333333;
+}
+

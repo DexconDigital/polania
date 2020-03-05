@@ -9,6 +9,11 @@ $(document).ready(function () {
             $('#tipo_gestion_buscar').attr("disabled", true);
             $('#precio_minimo_buscar').attr("disabled", true);
             $('#precio_maximo_buscar').attr("disabled", true);
+            $('#area_minima_buscar').attr("disabled", true);
+            $('#area_maxima_buscar').attr("disabled", true);
+            $('#banios_buscar').attr("disabled", true);
+            $('#alcobas_buscar').attr("disabled", true);
+            $('#garajes_buscar').attr("disabled", true);
         }else{
             $('#ciudad_buscar').removeAttr("disabled");
             $('#barrio_buscar').removeAttr("disabled");
@@ -16,9 +21,14 @@ $(document).ready(function () {
             $('#tipo_gestion_buscar').removeAttr("disabled");
             $('#precio_minimo_buscar').removeAttr("disabled");
             $('#precio_maximo_buscar').removeAttr("disabled");
+            $('#area_minima_buscar').removeAttr("disabled");
+            $('#area_maxima_buscar').removeAttr("disabled");
+            $('#banios_buscar').removeAttr("disabled");
+            $('#alcobas_buscar').removeAttr("disabled");
+            $('#garajes_buscar').removeAttr("disabled");
         }
     });
-
+ 
     // Funcion para cargar departamentos, ciudades y barrios
     $.ajax({
         url: 'https://www.simi-api.com/ApiSimiweb/response/v2/departamento',
@@ -146,7 +156,18 @@ $(document).ready(function () {
 });
 
 // Definir las variables que se van a usar para almacenar los datos que se traen del buscador
-var code, ciudad_buscar, barrio_buscar, gestion_buscar, tipo_inmueble_buscar, alcobas_buscar, banos_buscar, maximo_buscar, minimo_buscar;
+var code,
+ciudad_buscar, 
+barrio_buscar, 
+gestion_buscar, 
+tipo_inmueble_buscar, 
+alcobas_buscar, 
+banios_buscar,  
+precio_maximo, 
+precio_minimo,
+area_minima_buscar,
+area_maxima_buscar,
+garajes_buscar;
 // Esta funcion trae los campos digitados en el buscador
 var busqueda = function(){
     code = $("#codigo_buscar").val();
@@ -156,6 +177,11 @@ var busqueda = function(){
     tipo_inmueble_buscar = $('#tipo_inmueble_buscar option:selected').val();
     precio_minimo = $('#precio_minimo_buscar').val();
     precio_maximo = $('#precio_maximo_buscar').val();
+    area_minima_buscar = $('#area_minima_buscar').val();
+    area_maxima_buscar = $('#area_maxima_buscar').val();
+    alcobas_buscar = $('#alcobas_buscar').val();
+    banios_buscar = $('#banios_buscar').val();
+    garajes_buscar = $('#garajes_buscar').val();
 
     // Si no trae nada del buscador definirla en cero
     ciudad_buscar = existeCampo(ciudad_buscar);
@@ -164,16 +190,26 @@ var busqueda = function(){
     tipo_inmueble_buscar = existeCampo(tipo_inmueble_buscar);
     precio_minimo = existeCampo(precio_minimo);
     precio_maximo =existeCampo(precio_maximo);
+    area_minima_buscar = existeCampo(area_minima_buscar);
+    area_maxima_buscar = existeCampo(area_maxima_buscar);
+    alcobas_buscar = existeCampo(alcobas_buscar);
+    banios_buscar = existeCampo(banios_buscar);
+    garajes_buscar = existeCampo(garajes_buscar);
 
     if (code !== "") {
         window.location.href = 'detalle_inmueble.php?co=' + code + '';
     }else{
-        window.location.href = 'inmueble.php?ci='+ciudad_buscar+
-        '&bar='+barrio_buscar+
-        '&ge='+gestion_buscar+
-        '&in='+tipo_inmueble_buscar+
-        '&premin='+precio_minimo+
-        '&premax='+precio_maximo+
+        window.location.href = 'inmuebles.php?ci='+ciudad_buscar+
+        '&bar=' + barrio_buscar +
+        '&ge=' + gestion_buscar +
+        '&in=' + tipo_inmueble_buscar +
+        '&aremin=' + area_minima_buscar +
+        '&aremax=' + area_maxima_buscar +
+        '&premin=' + precio_minimo +
+        '&premax=' + precio_maximo +
+        '&alcobas=' + alcobas_buscar +
+        '&banios=' + banios_buscar +
+        '&garajes=' + garajes_buscar +
         '&';
     }
 }

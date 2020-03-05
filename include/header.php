@@ -75,9 +75,6 @@ require './variables/variables.php';
     <link rel="stylesheet" href="./css/owl.carousel.min.css">
     <link rel="stylesheet" href="./css/owl.theme.default.min.css">
     <link rel="stylesheet" href="./css/style2.css">
-    <?php if ($page == 'inmuebles') {
-        echo '<link rel="stylesheet" href="./css/carrousel.inmuebles.css">';
-    } ?>
     <!-- <link rel="shortcut icon" href="" type="image/x-icon">
     <link rel="icon" href="" type="image/x-icon"> -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -151,7 +148,7 @@ require './variables/variables.php';
                                                     } ?>"><a href="./quienes-somos.php">Quiénes Somos</a></li>
                                     <li class="item <?php if ($page == 'inmuebles') {
                                                         echo 'current';
-                                                    } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
+                                                    } ?>"><a href="./inmuebles.php?">Inmuebles</a></li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" style="padding: 12px 22px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
                                         <div class="dropdown-menu" style="background-color: #66302E;">
@@ -244,7 +241,7 @@ require './variables/variables.php';
                                                 } ?>"><a href="./quienes-somos.php">Quiénes Somos</a></li>
                                 <li class="item <?php if ($page == 'inmuebles') {
                                                     echo 'current';
-                                                } ?>"><a href="./inmuebles.php">Inmuebles</a></li>
+                                                } ?>"><a href="./inmuebles.php?">Inmuebles</a></li>
                                 <li class="nav-item dropdown item">
                                     <a class="nav-link dropdown-toggle" style="padding: 16px 22px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
                                     <div class="dropdown-menu">

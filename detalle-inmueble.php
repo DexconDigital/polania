@@ -1,19 +1,44 @@
 <?php $page = 'inmuebles';
 include 'include/header.php';
-$codigo = $_GET["co"];
-$ch = curl_init();
-$headers =  'Authorization:Cj0p24oe4NvB9Cu3npAh9DRlNN0kfAeorYo3TKMh-933';
-curl_setopt($ch, CURLOPT_URL, 'http://www.simi-api.com/ApiSimiweb/response/v2/inmueble/codInmueble/' . $codigo . '');
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
-curl_setopt($ch, CURLOPT_USERPWD, $headers);
-$result = curl_exec($ch);
-curl_close($ch);
-$r = json_decode($result, true);
+require 'controllers/detalleInmuebleController.php';
 ?>
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="mapas/leaflet.css" crossorigin="" />
+<!-- Datos para compartir por facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="<?php echo 'https://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
+<meta property="og:title" content="<?php echo $r['Tipo_Inmueble'] . ' en ' . $r['Gestion']; ?>" />
+<meta property="og:description" content="Inmueble ubicado en: <?php echo $r['barrio'] . ', ' . $r['ciudad'] . ', ' . $r['depto']; ?> " />
+<meta property="og:image" itemprop="image" content="<?php echo $r['fotos'][0]['foto']; ?>" />
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="300">
+<meta property="og:image:height" content="300">
+<!-- fin de datos para compartir por facebook -->
+
+
+<style>
+    #map {
+        height: 300px;
+        z-index: 20;
+    }
+
+    .leaflet-control {
+        z-index: 200;
+    }
+
+    .leaflet-control {
+        z-index: 20;
+    }
+</style>
+<link itemprop="thumbnailUrl" href="<?php echo $r['fotos'][0]['foto']; ?>">
+<span itemprop="thumbnail" itemscope itemtype="http://schema.org/ImageObject">
+    <link itemprop="url" href="<?php echo $r['fotos'][0]['foto']; ?>">
+</span>
 <!-- Contenido -->
+
+<link rel="stylesheet" href="./css/carousel.tamanos.css">
+<link rel="stylesheet" href="./css/slick.css">
+<link rel="stylesheet" href="./css/slick-theme.css">
 <!-- cabezera -->
 <section class="page-title" style="background-image:url(images/banner_detalle_inmueble.jpg);">
     <div class="container-fluid">
@@ -41,172 +66,238 @@ $r = json_decode($result, true);
                 <div class="property-detail">
                     <div class="inner-box">
                         <!--Upper Box-->
-                        <div class="upper-box border">
-                            <h2 id="tipo_inmueble">Apartamento en Arriendo</h2>
-                            <span>$ 1.000.000</span>
-                            <div class="location" id="ubicacion"><span style="color: #F26336" class="icon fa fa-map-marker"></span> Ciudad Barrio</div>
+                        <div class="upper-box ">
+                            <h2 id="tipo_inmueble"><?php echo $r['Tipo_Inmueble'] . ' /' . $r['Gestion']; ?></h2>
+                            <span><?php if ($r['Gestion'] == 'Arriendo') {
+                                        echo '<span class="precio">$ ' . $r['ValorCanon'] . '</span>';
+                                    } else if ($r['Gestion'] == 'Venta') {
+                                        echo '<span class="precio">$ ' . $r['ValorVenta'] . '</span>';
+                                    } else {
+                                        echo '<span class="precio">$ ' . $r['ValorCanon'] . ' /$' . $r['ValorVenta'] . '</span>';
+                                    }
+                                    ?></span>
+                            <div class="location" id="ubicacion"><span style="color: #F26336" class="icon fa fa-map-marker"></span> <?php echo $r['barrio'] . ', ' . $r['ciudad']; ?></div>
                             <ul class="post-detail">
-                                <li class="p-0" id="codigo">Codigo: #</li>
-                                <li id="tipo_inmueble"><span style="color: #F26336" class="icon flaticon-squares"></span>Área</li>
-                                <li id="precio"><span style="color: #F26336" class="icon flaticon-bathtube-with-shower"></span> Baños</li>
-                                <li id="administracion"><span style="color: #F26336" class="icon flaticon-bed-1"></span>Alcobas</li>
-                                <li id="areaConstruida"><span style="color: #F26336" class="icon flaticon-garage"></span> Garajes</li>
-                                <!-- <li id="areaTotal"><span class="icon fa fa-map-marker"></span></li>
-                                <li id="alcobas"><span class="icon fa fa-map-marker"></span></li>
-                                <li id="banos"><span class="icon fa fa-map-marker"></span></li> -->
+                                <li class="p-0" id="codigo">Codigo: <?php echo $co; ?></li>
+                                <li id="tipo_inmueble"><span style="color: #F26336" class="icon flaticon-squares"></span><?php echo $r['AreaConstruida'] . 'm<sup>2'; ?></li>
+                                <li id="precio"><span style="color: #F26336" class="icon flaticon-bathtube-with-shower"></span> <?php echo $r['banos']; ?></li>
+                                <li id="administracion"><span style="color: #F26336" class="icon flaticon-bed-1"></span><?php echo  $r['alcobas']; ?></li>
+                                <li id="areaConstruida"><span style="color: #F26336" class="icon flaticon-garage"></span> <?php echo $r['garaje']; ?></li>
                             </ul>
                         </div>
 
-                        <!--Carousel Box-->
-                        <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="images/uno.jpg" class="d-block w-100 h-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/dos.jpg" class="d-block w-100 h-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/tres.jpg" class="d-block w-100 h-100" alt="...">
-                                </div>
-                            </div>
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Atras</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Siguiente</span>
-                        </a> -->
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="images/uno.jpg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/dos.jpg" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="images/tres.jpg" class="d-block w-100" alt="...">
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </div>
+                        <!-- main slider carousel items -->
+                        <section class="mt-3" id="slide-detalle">
+                            <?php
+                            if (isset($r['fotos'])) {
+                                for ($i = 0; $i < count($r['fotos']); $i++) {
+                                    echo '<div class="contenedor-img">
+                                        <img src="' . $r['fotos'][$i]['foto'] . '" alt="">
+                                    </div>';
+                                }
+                            } else {
+                                echo  '<div class="contenedor-img">
+                                        <img src="images/no_image.png" alt="">
+                                    </div>';
+                            }
+                            ?>
+                        </section>
+                        <section class="vertical-center-4 slider" id="miniaturas">
+                            <?php
+                            if (isset($r['fotos'])) {
+                                for ($i = 0; $i < count($r['fotos']); $i++) {
+                                    echo '<div class="contenedor-img">
+                                        <img src="' . $r['fotos'][$i]['foto'] . '" alt="">
+                                    </div>';
+                                }
+                            } else {
+                                echo  '<div class="contenedor-img">
+                                        <img src="images/no_image.png" alt="">
+                                    </div>';
+                            }
+                            ?>
+                        </section>
                     </div>
                     <div class="row mt-4">
                         <div class="col-12">
                             <ul class="row align-items-center pr-0">
-                                <li class="col-sm-12 col-xl-auto mr-auto d-flex justify-content-center"><a class="btn btn-primary boton-azul" style="font-size:1.8rem;" href="https://simicrm.app/mcomercialweb/fichas_tecnicas/fichatec3.php?reg=<?php echo $codigo ?>" target="_blank">Imprimir Ficha</a></li>
+                                <li class="col-sm-12 col-xl-auto mr-auto d-flex justify-content-center"><a class="btn btn-primary boton-azul" style="font-size:1.8rem;" href="https://simicrm.app/mcomercialweb/fichas_tecnicas/fichatec3.php?reg=108-<?php echo $co ?>" target="_blank">Imprimir Ficha</a></li>
                                 <li class="col-6 col-md-auto ml-auto m-top font-weight-bold">Compartir por: </li>
-                                <li class="col-2 col-md-auto m-top"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.grrfincaraiz.com.co%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D<?php echo $codigo; ?>" target="_blank"><img src="images/facebook.png" alt="" style="height: 30px;"></a></li>
-                                <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.grrfincaraiz.com.co%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D' . $codigo . '&text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] ?>" target="_blank"><img src="images/twitter.png" alt="" style="height: 30px;"></i></a></li>
-                                <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://wa.me/?text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] . '%20http://www.grrfincaraiz.com.co/grr/detalle-inmueble.php?co%3d' . $codigo ?>" target="_blank"><img src="images/whatsapp.png" alt="" style="height: 36px;"></a></li>
-                                <!-- <li class="col-2 col-auto d-md-none m-top"><a href="<?php echo 'https://wa.me/?text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] . '%20http://www..co//detalle-inmueble.php?co%3d' . $codigo ?>" target="_blank"><img src="images/whatsapp.png" alt="" style="height: 36px;"></a></li> -->
+                                <li class="col-2 col-md-auto m-top"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.polania.com%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D<?php echo $co; ?>" target="_blank"><img src="images/facebook.png" alt="" style="height: 30px;"></a></li>
+                                <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.polania.com%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D' . $co . '&text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] ?>" target="_blank"><img src="images/twitter.png" alt="" style="height: 30px;"></i></a></li>
+                                <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://wa.me/?text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] . '%20http://www.polania.com/detalle-inmueble.php?co%3d' . $co ?>" target="_blank"><img src="images/whatsapp.png" alt="" style="height: 36px;"></a></li>
                             </ul>
                         </div>
                     </div>
+                    <div class="accordion mt-5 mb-5" id="accordionExample">
+                        <!-- descricion -->
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <h4 class="texto_detalle enlaces">Descripción</h4>
+                                    </button>
+                                </h2>
+                            </div>
 
-                    <h4 class="pt-4 texto_detalle">Descripción</h4>
-                    <hr>
-                    <div class="text">
-                        <p id="descripcion"></p>
-                    </div>
-
-                    <h4 class="texto_detalle">Características Básicas</h4>
-                    <hr>
-                    <!--List Columns-->
-                    <div class="list-columns">
-                        <div class="row clearfix">
-                            <div class="column col-md-6 col-sm-6 col-xs-12">
-                                <!-- <ul class="list-style-three">
-                                    <li id="gestion">Gestion: </li>
-                                    <li id="precio">Precio: $</li>
-                                    <li id="administracion">Administracion: </li>
-                                    <li id="areaConstruida">Area Construida: </li>
-                                    <li id="areaTotal">Area Total: </li>
-                                    <li id="alcobas">Alcobas: </li>
-                                    <li id="banos">Baños: </li>
-                                    <li id="garaje">Garaje: </li>
-                                    <li id="edad_inmueble">Antiguedad Inmueble: </li>
-                                </ul> -->
+                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                <div class="card-body text-justify">
+                                    <p><?php echo  $r['descripcionlarga']; ?></p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="contenedor_externa">
-                        <h4 class="texto_detalle"> Características Internas</h4>
-                        <hr>
-                        <!--List Columns-->
-                        <div class="list-columns">
-                            <div class="row clearfix">
-                                <div class="column col-12">
-                                    <ul class="list-style-three" id="lista_caracteristicas_externas">
-
-                                    </ul>
+                        <!-- caracteristicas basicas  -->
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        <h4 class="texto_detalle enlaces"> Características Básicas</h4>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                <div class="card-body text-justify">
+                                    <div class="ml-3 container">
+                                        <ul class="">
+                                            <li class="biñeta">Gestion: </li>
+                                            <li class="biñeta">Precio: $</li>
+                                            <li class="biñeta">Administracion: </li>
+                                            <li class="biñeta">Area Construida: </li>
+                                            <li class="biñeta">Area Total: </li>
+                                            <li class="biñeta">Alcobas: </li>
+                                            <li class="biñeta">Baños: </li>
+                                            <li class="biñeta">Garaje: </li>
+                                            <li class="biñeta">Antiguedad Inmueble: </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Características Internas -->
+                        <div class="card">
+                            <div class="card-header" id="headingfour">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefour" aria-expanded="false" aria-controls="collapseThree">
+                                        <h4 class="texto_detalle enlaces">Características Internas</h4>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapsefour" class="collapse" aria-labelledby="headingfour" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <?php
+                                    if (count($r['caracteristicasInternas']) > 0) {
+                                        echo
+                                            ' <div class="container"> <ul>';
+                                        for ($i = 0; $i < count($r['caracteristicasInternas']); $i++) {
+                                            $caracteristicas = ltrim($r['caracteristicasInternas'][$i]['Descripcion']);
+                                            echo '<li class="ml-3 biñeta">' . $caracteristicas . '</li>';
+                                        }
+                                        echo  '</ul>
+                                        </div>
+                            ';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- caracteristicas esternas -->
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        <h4 class="texto_detalle enlaces">Caracteristicas Externas</h4>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <?php
+                                    if (count($r['caracteristicasExternas']) > 0) {
+                                        echo
+                                            '<div class="container"> <ul>';
+                                        for ($i = 0; $i < count($r['caracteristicasExternas']); $i++) {
+                                            $caracteristicas = ltrim($r['caracteristicasExternas'][$i]['Descripcion']);
+                                            echo '<li class="ml-3 biñeta">' . $caracteristicas . '</li>';
+                                        }
+                                        echo  '</ul>
+                                </div>
+                            ';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- caracteristicas alrededores -->
+                        <div class="card">
+                            <div class="card-header" id="headingfive">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsefive" aria-expanded="false" aria-controls="collapsefive">
+                                        <h4 class="texto_detalle enlaces">Caracteristicas Alrededores</h4>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapsefive" class="collapse" aria-labelledby="headingfive" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <?php
+                                    if (count($r['caracteristicasAlrededores']) > 0) {
+                                        echo
+                                            '<div class="container"> <ul>';
+                                        for ($i = 0; $i < count($r['caracteristicasAlrededores']); $i++) {
+                                            $caracteristicas = ltrim($r['caracteristicasAlrededores'][$i]['Descripcion']);
+                                            echo '<li class="ml-3 biñeta">' . $caracteristicas . '</li>';
+                                        }
+                                        echo  '</ul>
+                                </div>
+                            ';
+                                    }
+                                    ?>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- video -->
+                        <div class="card">
+                            <div class="card-header" id="headingsix">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsesix" aria-expanded="false" aria-controls="collapsesix">
+                                        <h4 class="texto_detalle enlaces">Video</h4>
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapsesix" class="collapse" aria-labelledby="headingsix" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <?php if ($r['video'] != "") {
+                                        echo
+                                            '
+                                    <div class="card contenedor_interna">
+                                <div class="card-body">
+                                <h4 class="texto_detalle">Video</h4>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">
+                                        <iframe class="w-100" height="409" src="' . $r['video'] . '" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                ';
+                                    } ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="contenedor_interna">
-                        <h4 class="texto_detalle">Caracteristicas Externas</h4>
-                        <hr>
-                        <!--List Columns-->
-                        <div class="list-columns">
-                            <div class="row clearfix">
-                                <div class="column col-12">
-                                    <ul class="list-style-three" id="lista_caracteristicas_internas">
-
-                                    </ul>
-                                </div>
+                    <div class="container">
+                        <h4 class="texto_detalle mb-3 enlaces">Mapa de Ubicación</h4>
+                        <!--Property Map Section-->
+                        <div class="card mapa_tamaño">
+                            <div class="">
+                                <div id="map" class="w-100"></div>
                             </div>
                         </div>
-                    </div>
-                    <div class="contenedor_interna">
-                        <h4 class="texto_detalle">Caracteristicas Alrededores</h4>
-                        <hr>
-                        <!--List Columns-->
-                        <div class="list-columns">
-                            <div class="row clearfix">
-                                <div class="column col-12">
-                                    <ul class="list-style-three" id="lista_caracteristicas_internas">
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="contenedor_interna">
-                        <h4 class="texto_detalle">Video</h4>
-                        <hr>
-                        <!--List Columns-->
-                        <div class="list-columns">
-                            <div class="row clearfix">
-                                <div class="column col-12">
-                                    <ul class="list-style-three" id="lista_caracteristicas_internas">
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <h4 class="texto_detalle">Ubicación</h4>
-                    <!--Property Map Section-->
-                    <div class="property-map-section">
-
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.989004319481!2d-74.08263218523801!3d4.595991996661083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f990631614bff%3A0xbceb0a0b1545fc54!2zQ3JhLiAxMCAjNy0zLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1557225039574!5m2!1ses-419!2sco" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!--Sidebar Side-->
             </div>
 
-            <div class="sidebar-side col-lg-4 offset-lg-0 col-md-10 offset-md-1 col-sm-12 col-xs-12 border">
+            <div class="sidebar-side col-lg-4 offset-lg-0 col-md-10 offset-md-1 col-sm-12 col-xs-12">
                 <aside class="sidebar">
                     <!-- Properties Posts -->
                     <div class="sidebar-widget properties-posts" id="p_similares">
@@ -214,107 +305,29 @@ $r = json_decode($result, true);
                             <h3 class="text-md-center"> Contacto con el asesor</h3>
                             <div class="separator mx-auto"></div>
                         </div>
-                        <div class="col-12 border d-flex justify-content-center">
-                            <div class="col-8 border">
-                                <img src="images/no_image.png" alt="">
+                        <div class="col-12 d-flex justify-content-center">
+                            <div class="col-9">
+                                <img src="<?php echo $asesor['FotoAsesor']; ?>" alt="">
                             </div>
                         </div>
-                        <div class="col-12 border d-flex justify-content-center mb-5">
-                            <div class="col-8 border">
+                        <div class="col-12 d-flex justify-content-center mb-5">
+                            <div class="col-9">
                                 <ul>
-                                    <li><span class="color_icono icon fas fas fa-user mr-2"></span> Nombre y Apellido</li>
-                                    <li><span class="color_icono icon fas fas fa-phone mr-2"></span> 311 222 33 55</li>
-                                    <li><span class="color_icono icon fas fas fa-envelope mr-2"></span> ejemplo@dominio.com</li>
+                                    <li><span class="color_icono icon fas fas fa-user mr-2"></span> <?php echo $asesor['ntercero']; ?></li>
+                                    <li><span class="color_icono icon fas fas fa-phone mr-2"></span><a class="acesor_enlace" href="tel:+57<?php echo $asesor['celular']; ?>"><?php echo $asesor['celular']; ?></a></li>
+                                    <li><span class="color_icono icon fas fas fa-envelope mr-2"></span> <a class="acesor_enlace" href="mailto:<?php echo $asesor['correo']; ?>"><?php echo $asesor['correo']; ?></a></li>
 
                                 </ul>
                             </div>
                         </div>
                         <!-- Lista de propiedades similares -->
-                        <div class="col-12 border mt-5">
+                        <div class="col-12 mt-5">
                             <div class="">
                                 <div class="sidebar-title">
                                     <h3 class="text-md-center"> Propiedades similares</h3>
                                     <div class="separator mx-auto"></div>
-                                    <div class="col-12 p-0 d-flex">
-                                        <div class="col-6 border mt-5 p-0">
-                                            <img src="images/no_image.png" alt="">
-                                        </div>
-                                        <div class="col-6 mt-5 ">
-                                            <div> 
-                                                <h3>Apartamento</h3>
-                                            </div>
-                                            <div class="mb-3">
-                                                <h4>Bogotá D.C</h4>
-                                            </div>
-                                            <div class="">
-                                                <h3>Venta</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 p-0 d-flex">
-                                        <div class="col-6 border mt-5 p-0">
-                                            <img src="images/no_image.png" alt="">
-                                        </div>
-                                        <div class="col-6 mt-5 ">
-                                            <div> 
-                                                <h3>Apartamento</h3>
-                                            </div>
-                                            <div class="mb-3">
-                                                <h4>Bogotá D.C</h4>
-                                            </div>
-                                            <div class="">
-                                                <h3>Venta</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 p-0 d-flex">
-                                        <div class="col-6 border mt-5 p-0">
-                                            <img src="images/no_image.png" alt="">
-                                        </div>
-                                        <div class="col-6 mt-5 ">
-                                            <div> 
-                                                <h3>Apartamento</h3>
-                                            </div>
-                                            <div class="mb-3">
-                                                <h4>Bogotá D.C</h4>
-                                            </div>
-                                            <div class="">
-                                                <h3>Venta</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 p-0 d-flex">
-                                        <div class="col-6 border mt-5 p-0">
-                                            <img src="images/no_image.png" alt="">
-                                        </div>
-                                        <div class="col-6 mt-5 ">
-                                            <div> 
-                                                <h3>Apartamento</h3>
-                                            </div>
-                                            <div class="mb-3">
-                                                <h4>Bogotá D.C</h4>
-                                            </div>
-                                            <div class="">
-                                                <h3>Venta</h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 p-0 d-flex">
-                                        <div class="col-6 border mt-5 p-0">
-                                            <img src="images/no_image.png" alt="">
-                                        </div>
-                                        <div class="col-6 mt-5 ">
-                                            <div> 
-                                                <h3>Apartamento</h3>
-                                            </div>
-                                            <div class="mb-3">
-                                                <h4>Bogotá D.C</h4>
-                                            </div>
-                                            <div class="">
-                                                <h3>Venta</h3>
-                                            </div>
-                                        </div>
-                                    </div>
+
+                                    <?php similares($r['IdCiudad'], $r['IdTpInm']); ?>
                                 </div>
                             </div>
                         </div>
@@ -330,14 +343,65 @@ $r = json_decode($result, true);
 </div>
 <!-- fin contenido -->
 <!-- footer -->
-<?php include 'include/footer.php'; ?>
+
 <?php echo "<script> var codigoInmueble ='" . $codigo . "';</script>"; ?>
-<!-- <script src="conexion_api/token_api.js"></script> -->
-<!-- <script src="conexion_api/validadores.js"></script> -->
-<!-- <script src="conexion_api/detalle_inmueble.js"></script> -->
-<!-- <script src="conexion_api/modelo_inmueble.js"></script> -->
-<!-- <script src="conexion_api/similares.js"></script> -->
-<!-- <script src="conexion_api/similares.js"></script> -->
+<script src="js/jquery.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script>
+    $('#slide-detalle').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: true,
+        fade: true,
+        asNavFor: '#miniaturas'
+    });
+    $('#miniaturas').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        asNavFor: '#slide-detalle',
+        dots: false,
+        centerMode: true,
+        focusOnSelect: true,
+        variableWidth: true,
+        responsive: [{
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            }
+        ]
+    });
+</script>
+<!-- mapa del inmueble -->
+<script src="mapas/leaflet.js" crossorigin=""></script>
+<script>
+    var map = L.map('map').setView([<?php echo $r['latitud']; ?>, <?php echo $r['longitud'] ?>], 14);
+
+    L.tileLayer('https://api.maptiler.com/maps/streets/256/{z}/{x}/{y}.png?key=1rAGHv3KcO1nrS6S9cgI', {
+        attribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a>'
+    }).addTo(map);
+
+    L.marker([<?php echo $r['latitud']; ?>, <?php echo $r['longitud'] ?>]).addTo(map)
+        .bindPopup('<img src="<?php echo $r['fotos'][0]['foto'] ?>"])" alt="" width="55px" height="auto"><br>Ubicación')
+        .openPopup();
+</script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <?php $page = 'inicio';
-include 'include/header.php'; ?>
+include 'include/header.php';
+require 'controllers/indexController.php'; ?>
 <!-- slide de imagenes -->
 <main id="hero">
     <div id="carouselHero" class="carousel slide" data-ride="carousel">
@@ -116,83 +117,14 @@ include 'include/header.php'; ?>
             </div>
             <div class="col-12">
                 <div class="row">
-                    <div class="col-12 col-md-10 offset-md-1 pl-0 pr-0" id="propiedades_destacadas">
-                        <div class="property-block col-12 col-sm-6 col-lg-4 col-xl-4">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="detalle-inmueble.php?co=''"><img src="images/no_image.png" alt=""></a>
-                                    <div class="sale">Arriendo</div>
-                                    <div class="price">$ 1.000.000 </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="upper-box" style="min-height: 9.3rem;">
-                                        <h3><a href="images/no_image.png">Apartamento</a></h3>
-                                        <div class="location"><span class="icon flaticon-location-pin"></span> Ciudad - Barrio</div>
-                                        <div class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ea sequi ex nemo officiis. Voluptate ex provident rem, laudantium eveniet optio ut repudiandae quam id sequi mollitia. Commodi, accusantium dolorem!</div>
-                                    </div>
-                                    <div class="lower-box clearfix">
-                                        <ul class="row justify-content-center">
-                                            <li class="col-auto"><span class="icon flaticon-squares"></span>3 m<sup>2</sup></li>
-                                            <li class="col-auto"><span class="icon flaticon-bed-1"></span>3</li>
-                                            <li class="col-auto"><span class="icon flaticon-bathtube-with-shower"></span>2</li>
-                                            <li class="col-auto"><span class="icon flaticon-garage"></span>2</li>
-                                            <li class="col-auto">Codigo: 435</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="property-block col-12 col-sm-6 col-lg-4 col-xl-4">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="detalle-inmueble.php?co=''"><img src="images/no_image.png" alt=""></a>
-                                    <div class="sale">Arriendo</div>
-                                    <div class="price">$ 1.000.000 </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="upper-box" style="min-height: 9.3rem;">
-                                        <h3><a href="images/no_image.png">Apartamento</a></h3>
-                                        <div class="location"><span class="icon flaticon-location-pin"></span> Ciudad - Barrio</div>
-                                        <div class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ea sequi ex nemo officiis. Voluptate ex provident rem, laudantium eveniet optio ut repudiandae quam id sequi mollitia. Commodi, accusantium dolorem!</div>
-                                    </div>
-                                    <div class="lower-box clearfix">
-                                        <ul class="row justify-content-center">
-                                            <li class="col-auto"><span class="icon flaticon-squares"></span>3 m<sup>2</sup></li>
-                                            <li class="col-auto"><span class="icon flaticon-bed-1"></span>3</li>
-                                            <li class="col-auto"><span class="icon flaticon-bathtube-with-shower"></span>2</li>
-                                            <li class="col-auto"><span class="icon flaticon-garage"></span>2</li>
-                                            <li class="col-auto">Codigo: 435</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="property-block col-12 col-sm-6 col-lg-4 col-xl-4">
-                            <div class="inner-box">
-                                <div class="image">
-                                    <a href="detalle-inmueble.php?co=''"><img src="images/no_image.png" alt=""></a>
-                                    <div class="sale">Arriendo</div>
-                                    <div class="price">$ 1.000.000 </div>
-                                </div>
-                                <div class="lower-content">
-                                    <div class="upper-box" style="min-height: 9.3rem;">
-                                        <h3><a href="images/no_image.png">Apartamento</a></h3>
-                                        <div class="location"><span class="icon flaticon-location-pin"></span> Ciudad - Barrio</div>
-                                        <div class="text-justify">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum ea sequi ex nemo officiis. Voluptate ex provident rem, laudantium eveniet optio ut repudiandae quam id sequi mollitia. Commodi, accusantium dolorem!</div>
-                                    </div>
-                                    <div class="lower-box clearfix">
-                                        <ul class="row justify-content-center">
-                                            <li class="col-auto"><span class="icon flaticon-squares"></span>3 m<sup>2</sup></li>
-                                            <li class="col-auto"><span class="icon flaticon-bed-1"></span>3</li>
-                                            <li class="col-auto"><span class="icon flaticon-bathtube-with-shower"></span>2</li>
-                                            <li class="col-auto"><span class="icon flaticon-garage"></span>2</li>
-                                            <li class="col-auto">Codigo: 435</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                    <div class="col-12 col-md-10 row justify-content-center offset-md-1 pl-0 pr-0" id="propiedades_destacadas">
+                        <?php
+                        if (is_array($api)) {
+                            inmuebles_destacados($api);
+                        } else {
+                            echo '<h2 class="text-center" >No tiene Inmuebles Destacados</h2>';
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -223,7 +155,7 @@ include 'include/header.php'; ?>
                     <div class="title">Entradas recientes</div>
                     <h2> Últimas noticias</h2>
                     <div class="separator"></div>
-                    <div class="col-12 d-flex">
+                    <div class="col-12 d-flex mt-5">
                         <div class="col-4 mt-5">
                             <a href="#">
                                 <div class="card">
