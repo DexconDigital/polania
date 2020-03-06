@@ -58,7 +58,7 @@ require 'controllers/detalleInmuebleController.php';
     </div>
 </section>
 <!-- Detalle inmueble -->
-<div class="sidebar-page-container">
+<div class="mt-5 mb-5">
     <div class="auto-container">
         <div class="row clearfix">
             <!--Content Side / Property Detail-->
@@ -67,7 +67,7 @@ require 'controllers/detalleInmuebleController.php';
                     <div class="inner-box">
                         <!--Upper Box-->
                         <div class="upper-box ">
-                            <h2 id="tipo_inmueble"><?php echo $r['Tipo_Inmueble'] . ' /' . $r['Gestion']; ?></h2>
+                            <h2 id="tipo_inmueble"><?php echo $r['Tipo_Inmueble'] . ' / ' . $r['Gestion']; ?></h2>
                             <span><?php if ($r['Gestion'] == 'Arriendo') {
                                         echo '<span class="precio">$ ' . $r['ValorCanon'] . '</span>';
                                     } else if ($r['Gestion'] == 'Venta') {
@@ -121,7 +121,7 @@ require 'controllers/detalleInmuebleController.php';
                     <div class="row mt-4">
                         <div class="col-12">
                             <ul class="row align-items-center pr-0">
-                                <li class="col-sm-12 col-xl-auto mr-auto d-flex justify-content-center"><a class="btn btn-primary boton-azul" style="font-size:1.8rem;" href="https://simicrm.app/mcomercialweb/fichas_tecnicas/fichatec3.php?reg=108-<?php echo $co ?>" target="_blank">Imprimir Ficha</a></li>
+                                <li class="col-sm-12 col-xl-auto mr-auto d-flex justify-content-center"><a class="btn boton-azul" style="font-size:1.8rem; color:white;" href="https://simicrm.app/mcomercialweb/fichas_tecnicas/fichatec3.php?reg=108-<?php echo $co ?>" target="_blank">Imprimir Ficha</a></li>
                                 <li class="col-6 col-md-auto ml-auto m-top font-weight-bold">Compartir por: </li>
                                 <li class="col-2 col-md-auto m-top"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.polania.com%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D<?php echo $co; ?>" target="_blank"><img src="images/facebook.png" alt="" style="height: 30px;"></a></li>
                                 <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.polania.com%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D' . $co . '&text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] ?>" target="_blank"><img src="images/twitter.png" alt="" style="height: 30px;"></i></a></li>
@@ -159,15 +159,24 @@ require 'controllers/detalleInmuebleController.php';
                                 <div class="card-body text-justify">
                                     <div class="ml-3 container">
                                         <ul class="">
-                                            <li class="biñeta">Gestion: </li>
-                                            <li class="biñeta">Precio: $</li>
-                                            <li class="biñeta">Administracion: </li>
-                                            <li class="biñeta">Area Construida: </li>
-                                            <li class="biñeta">Area Total: </li>
-                                            <li class="biñeta">Alcobas: </li>
-                                            <li class="biñeta">Baños: </li>
-                                            <li class="biñeta">Garaje: </li>
-                                            <li class="biñeta">Antiguedad Inmueble: </li>
+                                            <li class="biñeta">Gestion: <?php echo $r['Gestion'] ?></li>
+                                            <li class="biñeta">Precio: <?php if ($r['Gestion'] == 'Arriendo') {
+                                                                            echo '<span class="precio">$ ' . $r['ValorCanon'] . '</span>';
+                                                                        } else if ($r['Gestion'] == 'Venta') {
+                                                                            echo '<span class="precio">$ ' . $r['ValorVenta'] . '</span>';
+                                                                        } else {
+                                                                            echo '<span class="precio">$ ' . $r['ValorCanon'] . ' /$' . $r['ValorVenta'] . '</span>';
+                                                                        }
+                                                                        ?></li>
+                                            <?php if ($administracion != "") {
+                                                echo '<li class="biñeta">Administración: $' . $administracion . '</li>';
+                                            } ?>
+                                            <li class="biñeta">Área Construida: <?php echo $area_construida; ?>m<sup>2<sup> </li>
+                                            <li class="biñeta">Área Privada: <?php echo $area_privada; ?>m<sup>2<sup> </li>
+                                            <li class="biñeta">Alcobas: <?php echo $alcobas; ?> </li>
+                                            <li class="biñeta">Baños: <?php echo $banios; ?></li>
+                                            <li class="biñeta">Garaje: <?php echo $garaje; ?> </li>
+                                            <li class="biñeta">Antiguedad Inmueble: <?php echo $edad_inmueble; ?> años</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -343,8 +352,9 @@ require 'controllers/detalleInmuebleController.php';
 </div>
 <!-- fin contenido -->
 <!-- footer -->
-
-<?php echo "<script> var codigoInmueble ='" . $codigo . "';</script>"; ?>
+<?php include 'include/footer.php'; ?>
+<script src="js/script.js"></script>
+<!-- <?php echo "<script> var codigoInmueble ='" . $co . "';</script>"; ?> -->
 <script src="js/jquery.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script>

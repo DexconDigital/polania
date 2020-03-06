@@ -106,6 +106,8 @@ $(document).ready(function () {
            'dataType': "json",
            success:function(gestion)
            {
+            //Eliminar un campo del array 
+            gestion.splice(2, 1)
             var gestion_resultados = " ";
             for (var i = 0; i < gestion.length; i++) {
                 gestion_resultados +=
@@ -197,7 +199,7 @@ var busqueda = function(){
     garajes_buscar = existeCampo(garajes_buscar);
 
     if (code !== "") {
-        window.location.href = 'detalle_inmueble.php?co=' + code + '';
+        window.location.href = 'detalle-inmueble.php?co=' + code + '';
     }else{
         window.location.href = 'inmuebles.php?ci='+ciudad_buscar+
         '&bar=' + barrio_buscar +

@@ -1,4 +1,5 @@
-<?php include 'include/header.php';
+<?php $page = 'inmuebles';
+include 'include/header.php';
 require 'controllers/inmueblesController.php'; ?>
 <!-- Contenido -->
 <!-- Cabezera -->
@@ -29,7 +30,7 @@ require 'controllers/inmueblesController.php'; ?>
                 <div class="row">
                     <!-- Lista de inmuebles  -->
 
-                    <div class="col-12 col-lg-11 col-md-10" id="propiedades_destacadas">
+                    <div class="col-12 col-lg-11 col-md-10 row justify-content-start" id="propiedades_destacadas">
                         <!-- propiedades -->
                         <?php
                         if (is_array($api)) {

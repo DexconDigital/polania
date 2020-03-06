@@ -233,7 +233,7 @@ require './variables/variables.php';
 
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
-                                <li class=" <?php if ($page == 'inicio') {
+                                <li class="item <?php if ($page == 'inicio') {
                                                 echo 'current';
                                             } ?>"><a href="./index.php">Inicio</a></li>
                                 <li class="item <?php if ($page == 'quienes') {

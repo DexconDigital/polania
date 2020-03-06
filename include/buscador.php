@@ -23,7 +23,7 @@
                         <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for="">Tipo de Inmueble</label>
                             <select class="form-control" id="tipo_inmueble_buscar">
-                                <option selected default> Tipo de Gestión </option>
+                                <option selected default> Tipo de Inmueble </option>
                             </select>
                         </div>
                         <!--tipo gestion -->
