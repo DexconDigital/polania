@@ -1,4 +1,4 @@
-<?php $page = 'blog';
+<?php $page = 'noticias';
 include 'include/header.php'; ?>
 <!-- Contenido -->
 <!-- Cabezera -->
@@ -8,12 +8,12 @@ include 'include/header.php'; ?>
         </div>
         <div class="col-10 offset-1">
             <div class="pull-left">
-                <h1>Blog</h1>
+                <h1>Noticias</h1>
             </div>
             <div class="pull-right">
                 <ul class="page-breadcrumb">
                     <li><a href="index.html">Inicio</a></li>
-                    <li>Blog</li>
+                    <li>Noticias</li>
                 </ul>
             </div>
         </div>
@@ -27,7 +27,7 @@ include 'include/header.php'; ?>
                 <div class="sec-title centered">
                     <div class="col-12 d-flex">
                         <div class="col-4 mt-5">
-                            <a href="#">
+                            <a href="detalle_noticia.php">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
@@ -49,7 +49,7 @@ include 'include/header.php'; ?>
                             </a>
                         </div>
                         <div class="col-4 mt-5">
-                            <a href="#">
+                            <a href="detalle_noticia.php">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
@@ -71,7 +71,7 @@ include 'include/header.php'; ?>
                             </a>
                         </div>
                         <div class="col-4 mt-5">
-                            <a href="#">
+                            <a href="detalle_noticia.php">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
@@ -92,7 +92,7 @@ include 'include/header.php'; ?>
                                 </div>
                             </a>
                         </div>
-                        
+
 
                     </div>
                 </div>

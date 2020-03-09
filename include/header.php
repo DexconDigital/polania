@@ -157,9 +157,13 @@ require './variables/variables.php';
                                             <a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd"></i> Pagos PSE</a>
                                         </div>
                                     </li>
-                                    <li class="item <?php if ($page == 'blog') {
+                                    <li class="item <?php if ($page == 'servicios') {
                                                         echo 'current';
-                                                    } ?>"><a href="./blog.php">Blog</a></li>
+                                                    } ?>"><a href="./servicio.php">Servicios</a></li>
+
+                                    <li class="item <?php if ($page == 'noticias') {
+                                                        echo 'current';
+                                                    } ?>"><a href="./noticia.php">Noticias</a></li>
                                     <li class="item <?php if ($page == 'contacto') {
                                                         echo 'current';
                                                     } ?>"><a href="./contacto.php">Contáctenos</a></li>
@@ -234,8 +238,8 @@ require './variables/variables.php';
                         <div class="navbar-collapse collapse clearfix">
                             <ul class="navigation clearfix">
                                 <li class="item <?php if ($page == 'inicio') {
-                                                echo 'current';
-                                            } ?>"><a href="./index.php">Inicio</a></li>
+                                                    echo 'current';
+                                                } ?>"><a href="./index.php">Inicio</a></li>
                                 <li class="item <?php if ($page == 'quienes') {
                                                     echo 'current';
                                                 } ?>"><a href="./quienes-somos.php">Quiénes Somos</a></li>
@@ -250,9 +254,12 @@ require './variables/variables.php';
                                         <a id="hover" class="dropdown-item" style="color: black" href="#"><i class="fas fa-hand-holding-usd iconos"></i> Pagos PSE</a>
                                     </div>
                                 </li>
-                                <li class="item <?php if ($page == 'blog') {
+                                <li class="item <?php if ($page == 'servicios') {
                                                     echo 'current';
-                                                } ?>"><a href="./blog.php">Blog</a></li>
+                                                } ?>"><a href="./servicio.php">Servicios</a></li>
+                                <li class="item <?php if ($page == 'noticias') {
+                                                    echo 'current';
+                                                } ?>"><a href="./noticia.php">Noticias</a></li>
                                 <li class="item <?php if ($page == 'contacto') {
                                                     echo 'current';
                                                 } ?>"><a href="./contacto.php">Contáctenos</a></li>

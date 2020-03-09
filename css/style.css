@@ -587,7 +587,7 @@ img{
 .header-top-one{
 	position:relative;
 	overflow:hidden;
-	background-color: #383336;
+	background-color: rgb(56, 51, 54);
 }
 
 .header-top-one .inner-container{
@@ -7239,4 +7239,8 @@ img{
 	box-shadow: 0 0 0 0.2rem rgba(240, 79, 54, 0.71) !important;
 }
 
-
+#cont_img_noticia{
+	float: left;
+	object-fit: contain;
+    
+}

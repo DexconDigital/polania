@@ -59,9 +59,9 @@ require 'controllers/indexController.php'; ?>
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="quienes-somos.php#servicios" style="color:inherit;">ARRIENDOS</a></h3>
+                                                <h3><a href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck" style="color:inherit;">ARRENDATARIOS</a></h3>
                                             </div>
-                                            <a class="purchased" href="quienes-somos.php#servicios">
+                                            <a class="purchased" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck">
                                                 Ver más</a>
                                         </div>
                                     </div>
@@ -75,9 +75,9 @@ require 'controllers/indexController.php'; ?>
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="quienes-somos.php#servicios" style="color:inherit;">VENTAS</a></h3>
+                                                <h3><a href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck" style="color:inherit;">PROPIETARIOS</a></h3>
                                             </div>
-                                            <a class="purchased" href="quienes-somos.php#servicios">Ver más</a>
+                                            <a class="purchased" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck" >Ver más</a>
                                         </div>
                                     </div>
                                 </div>
@@ -86,13 +86,13 @@ require 'controllers/indexController.php'; ?>
                         <div class="house-block col-lg-4 offset-lg-0 col-md-6 offset-md-3 col-sm-12">
                             <div class="inner-box">
                                 <div class="image">
-                                    <img src="images/asesoria.jpg" alt="imagen referente a asesorias">
+                                    <img src="images/pagos-en-linea.jpg" alt="imagen referente a asesorias">
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="quienes-somos.php#servicios" style="color:inherit;">ASESORÍAS JURÍDICAS</a></h3>
+                                                <h3><a href="" target="_blanck" style="color:inherit;">PAGOS EN LÍNEA</a></h3>
                                             </div>
-                                            <a class="purchased" href="quienes-somos.php#servicios">Ver más</a>
+                                            <a class="purchased" href="" target="_blanck">Ver más</a>
                                         </div>
                                     </div>
                                 </div>
