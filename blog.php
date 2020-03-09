@@ -37,7 +37,7 @@ include 'include/header.php'; ?>
 
                                     <div class="card-body">
 
-                                        <h2>Últimas Ofertas</h2>
+                                        <h2>Noticia</h2>
 
                                         <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
@@ -59,7 +59,7 @@ include 'include/header.php'; ?>
 
                                     <div class="card-body">
 
-                                        <h2>Últimas Ofertas</h2>
+                                        <h2>Noticia</h2>
 
                                         <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
@@ -81,7 +81,7 @@ include 'include/header.php'; ?>
 
                                     <div class="card-body">
 
-                                        <h2>Últimas Ofertas</h2>
+                                        <h2>Noticia</h2>
 
                                         <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
@@ -92,6 +92,7 @@ include 'include/header.php'; ?>
                                 </div>
                             </a>
                         </div>
+                        
 
                     </div>
                 </div>

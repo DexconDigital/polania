@@ -47,44 +47,44 @@
                             </select>
                         </div>
                         <!-- baños -->
-                        <div class="form-group col-12 col-md-6 col-lg-3">
+                        <!-- <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for="">Baños</label>
                             <input type="number" placeholder="Baños" id="banios_buscar" class="form-control">
-                        </div>
+                        </div> -->
                         <!--  Alcobas -->
-                        <div class="form-group col-12 col-md-6 col-lg-3">
+                        <!-- <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for=""> Alcobas</label>
                             <input type="number" placeholder="Alcobas" id="alcobas_buscar" class="form-control">
-                        </div>
+                        </div> -->
                         <!--  Garajes -->
-                        <div class="form-group col-12 col-md-6 col-lg-3">
+                        <!-- <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for=""> Garajes</label>
                             <input type="number" placeholder="Garajes" id="garajes_buscar" class="form-control">
-                        </div>
+                        </div> -->
                         <!-- Área Máxima -->
-                        <div class="form-group col-12 col-md-6 col-lg-3">
+                        <!-- <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for="">Área Mínima</label>
                             <input type="number" placeholder="Área Mínima" id="area_minima_buscar" class="form-control">
-                        </div>
+                        </div> -->
                         <!--  Área Máxima -->
-                        <div class="form-group col-12 col-md-6 col-lg-3">
+                        <!-- <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for=""> Área Máxima</label>
                             <input type="number" placeholder="Área Máxima" id="area_maxima_buscar" class="form-control">
-                        </div>
+                        </div> -->
                         <!-- presio minimo -->
-                        <div class="form-group col-12 col-md-6 col-lg-3">
+                        <!-- <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for="">Precio Mínimo</label>
                             <input type="number" placeholder="Precio Mínimo" id="precio_minimo_buscar" class="form-control">
-                        </div>
+                        </div> -->
                         <!-- precio maximo -->
                         <div class="form-group col-12 col-md-6 col-lg-3">
                             <label for="">Precio Máximo</label>
                             <input type="number" placeholder="Precio Máximo" id="precio_maximo_buscar" class="form-control">
                         </div>
                         <!-- btn buscar -->
-                        <div class="form-group col-12 col-md-6 col-lg-12 pt-md-2 d-flex justify-content-center mt-3">
+                        <div class="form-group col-12 col-md-6 col-lg-6 pt-md-5 d-flex justify-content-center">
                             <br class="d-none d-md-block">
-                            <button type="button" id="buscar" class="btn btn-primary btn-lg btn-block col-lg-3">Buscar</button>
+                            <button type="button" id="buscar" class="btn btn-primary btn-lg btn-block col-lg-12">Buscar</button>
                         </div>
                     </form>
                 </div>

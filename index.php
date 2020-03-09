@@ -46,7 +46,7 @@ require 'controllers/indexController.php'; ?>
         <div class="row justify-content-center">
             <div class="sec-title centered">
                 <div class="title">Servicios íntegros, eficientes y responsables</div>
-                <h2>Nuestros servicios</h2>
+                <h2>Clientes</h2>
                 <div class="separator"></div>
             </div>
             <div class="col-12">
@@ -107,7 +107,7 @@ require 'controllers/indexController.php'; ?>
 </section>
 
 <!-- propiedades destacadas -->
-<section id="destacados">
+<!-- <section id="destacados">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="sec-title centered">
@@ -131,7 +131,7 @@ require 'controllers/indexController.php'; ?>
         </div>
     </div>
     </div>
-</section>
+</section> -->
 
 <section class="call-to-action" style="background-image:url(images/banner_frase.jpg)">
     <div class="auto-container">
@@ -153,7 +153,7 @@ require 'controllers/indexController.php'; ?>
             <div class="col-12">
                 <div class="sec-title centered">
                     <div class="title">Entradas recientes</div>
-                    <h2> Últimas noticias</h2>
+                    <h2> Noticias de interés</h2>
                     <div class="separator"></div>
                     <div class="col-12 d-flex mt-5">
                         <div class="col-4 mt-5">
@@ -167,7 +167,7 @@ require 'controllers/indexController.php'; ?>
 
                                     <div class="card-body">
 
-                                        <h2>Últimas Ofertas</h2>
+                                        <h2>Noticia</h2>
 
                                         <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
@@ -189,7 +189,7 @@ require 'controllers/indexController.php'; ?>
 
                                     <div class="card-body">
 
-                                        <h2>Últimas Ofertas</h2>
+                                        <h2>Noticia</h2>
 
                                         <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
@@ -211,7 +211,7 @@ require 'controllers/indexController.php'; ?>
 
                                     <div class="card-body">
 
-                                        <h2>Últimas Ofertas</h2>
+                                        <h2>Noticia</h2>
 
                                         <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
 
@@ -222,6 +222,7 @@ require 'controllers/indexController.php'; ?>
                                 </div>
                             </a>
                         </div>
+                       
 
 
                     </div>
