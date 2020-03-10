@@ -142,9 +142,6 @@ include 'include/header.php'; ?>
                                             <li style="list-style: square;">
                                                 <?php echo $texto_servicios['asesorias']['parrafos'][2] ?>
                                             </li>
-                                            <li style="list-style: square;">
-                                                <?php echo $texto_servicios['asesorias']['parrafos'][3] ?>
-                                            </li>
                                             <div class="" style="margin-bottom: 208px;">
                                             </div>
                                         </ul>

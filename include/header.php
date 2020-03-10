@@ -189,7 +189,7 @@ require './variables/variables.php';
                         <!--Top Left-->
                         <div class="top-left">
                             <ul class="links clearfix">
-                                <li><a href="mailto:<?php echo $datos_contacto['correo']['correo'] ?>"><i class="far fa-envelope mr-2 icono_correo"></i><?php echo $datos_contacto['correo']['correo'] ?></a></li>
+                                <li class="correo" ><a href="mailto:<?php echo $datos_contacto['correo']['correo'] ?>"><i class="far fa-envelope mr-2 icono_correo"></i><?php echo $datos_contacto['correo']['correo'] ?></a></li>
 
                             </ul>
                         </div>

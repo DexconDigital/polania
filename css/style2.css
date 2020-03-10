@@ -74,6 +74,7 @@ section.page-title {
 .enviar:hover{
     background-color: #BA3B38;
     border-color: #F04F36;
+    color: white !important;
 }
 .enviar:active{
     color: #fff;

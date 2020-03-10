@@ -82,6 +82,10 @@
 }
 .pull-left {
   float: left;
+  margin-left: 14px;
+}
+.correo{
+  margin-left: 14px;
 }
 .fa.pull-left {
   margin-right: .3em;

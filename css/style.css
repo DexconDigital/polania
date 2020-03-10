@@ -3037,7 +3037,7 @@ img{
 
 .services-block .inner-box .icon-box{
 	position:relative;
-	color:#D1D4D6;
+	color:var(--gris_oscuro);
 	font-size:60px;
 	line-height:1em;
 	margin-bottom:15px;

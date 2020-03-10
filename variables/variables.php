@@ -171,8 +171,7 @@ $texto_servicios = [
 		"parrafos" => [
 			0 => "En contratos de arrendamiento, procesos Ejecutivos y de Restitución.",
 			1 => "Conciliaciones extrajudiciales en asuntos civiles y de familia.",
-			2 => "Conciliaciones.",
-			3 => "Sucesiones.",
+			2 => "Sucesiones.",
 		],
 	],
 ];
