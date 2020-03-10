@@ -1,6 +1,6 @@
 <?php
 
-$nombre_inmobiliaria = "Inmobiliaria Polania";
+$nombre_inmobiliaria = "Polania Inmobiliaria";
 
 //logo empresa
 $logo_empresa = [
@@ -96,7 +96,7 @@ $texto_quienes_somos = [
 	"quienes_somos" => [
 		"titulo" => "Quiénes Somos",//en negrita
 		"parrafos" => [
-			0 => "Somos una agencia inmobiliaria familiar con tradición de dos generaciones establecida en Bogotá y con más de 40 años de experiencia en el sector, especializada en la administración de inmuebles en arrendamiento compraventa y arrendamiento sin mandato (corretaje). El trato cercano, honesto y ético durante todo el proceso es nuestra mayor identidad.",
+			0 => "Somos una agencia inmobiliaria familiar con tradición de dos generaciones establecida en Bogotá y con más de 40 años de experiencia en el sector, especializada en la administración de inmuebles en arrendamiento, compraventa y arrendamiento sin mandato (corretaje). El trato cercano, honesto y ético durante todo el proceso es nuestra mayor identidad.",
 			1 => "Nuestras alianzas estratégicas con otras inmobiliarias y la implementación de tecnologías nos permiten seguir prestando un servicio íntegro, eficiente y responsable que fortalece día a día la unión y fidelidad con nuestros clientes.",
 		],
 	],
@@ -169,9 +169,10 @@ $texto_servicios = [
 	"asesorias" =>[
 		"titulo" => "Asesorías Jurídicas",
 		"parrafos" => [
-			0 => "En contratos de arrendamiento, procesos Ejecutivos y de Restitución ",
-			1 => "Conciliaciones",
-			2 => "Sucesiones",
+			0 => "En contratos de arrendamiento, procesos Ejecutivos y de Restitución.",
+			1 => "Conciliaciones extrajudiciales en asuntos civiles y de familia.",
+			2 => "Conciliaciones.",
+			3 => "Sucesiones.",
 		],
 	],
 ];

@@ -65,7 +65,7 @@ require './variables/variables.php';
     <meta name="robots" content="noindex" />
     <meta name="author" content="Dexcon Digital" />
     <meta name="copyright" content="www.dexcondigital.com" /> -->
-    <title>Inmobiliaria Polania</title>
+    <title>Polania Inmobiliaria</title>
     <!-- Stylesheets -->
     <link rel="stylesheet" href="./css/bootstrap3.css">
     <link href="./css/bootstrap.css" rel="stylesheet">
@@ -122,7 +122,7 @@ require './variables/variables.php';
                     <div class="logo-box p-0">
                         <div class="logo">
                             <a href="index.php" class="ml-4">
-                                <img src="./images/polania_blanco_2.png" alt="Logo de la inmobiliaria Grr" style="height:70px; width:auto;">
+                                <img src="./images/polania_color.png" alt="Logo de la inmobiliaria Grr" style="height:70px; width:auto;">
                             </a>
                         </div>
                     </div>

@@ -11,6 +11,12 @@
 .fa-whatsapp{
     color: #25d366;
 }
+
+:root{
+	--gris_claro : #D1D4D6;
+	--gris_oscuro :#969999;
+	--naranja_medio: #F26336;
+}
 /* Fin hover de iconos */
 /* Boton subir */
 .subir{
@@ -61,8 +67,9 @@ section.page-title {
 .enviar{
     padding: 15px;
     font-size: 1.5em;
-    background-color: #616161;
+    background-color: var(--gris_claro);
     border-color: #BA3B38;
+    color : black !important;
 }
 .enviar:hover{
     background-color: #BA3B38;
