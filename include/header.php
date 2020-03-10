@@ -146,20 +146,20 @@ require './variables/variables.php';
                                     <li class="item <?php if ($page == 'quienes') {
                                                         echo 'current';
                                                     } ?>"><a href="./quienes-somos.php">Quiénes Somos</a></li>
+                                        <li class="item <?php if ($page == 'servicios') {
+                                                            echo 'current';
+                                                        } ?>"><a href="./servicio.php">Servicios</a></li>
                                     <li class="item <?php if ($page == 'inmuebles') {
                                                         echo 'current';
                                                     } ?>"><a href="./inmuebles.php?">Inmuebles</a></li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" style="padding: 12px 32px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
-                                        <div class="dropdown-menu" style="background-color: #66302E;">
+                                        <div class="dropdown-menu" style="background-color: #616161;">
                                             <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck"><i class="fas fa-home"></i> Arrendatarios</a>
                                             <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck"><i class="fas fa-key"></i> Propietarios</a>
                                             <a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd"></i> Pagos PSE</a>
                                         </div>
                                     </li>
-                                    <li class="item <?php if ($page == 'servicios') {
-                                                        echo 'current';
-                                                    } ?>"><a href="./servicio.php">Servicios</a></li>
 
                                     <li class="item <?php if ($page == 'noticias') {
                                                         echo 'current';
@@ -243,6 +243,9 @@ require './variables/variables.php';
                                 <li class="item <?php if ($page == 'quienes') {
                                                     echo 'current';
                                                 } ?>"><a href="./quienes-somos.php">Quiénes Somos</a></li>
+                                    <li class="item <?php if ($page == 'servicios') {
+                                                        echo 'current';
+                                                    } ?>"><a href="./servicio.php">Servicios</a></li>
                                 <li class="item <?php if ($page == 'inmuebles') {
                                                     echo 'current';
                                                 } ?>"><a href="./inmuebles.php?">Inmuebles</a></li>
@@ -254,9 +257,6 @@ require './variables/variables.php';
                                         <a id="hover" class="dropdown-item" style="color: black" href="#"><i class="fas fa-hand-holding-usd iconos"></i> Pagos PSE</a>
                                     </div>
                                 </li>
-                                <li class="item <?php if ($page == 'servicios') {
-                                                    echo 'current';
-                                                } ?>"><a href="./servicio.php">Servicios</a></li>
                                 <li class="item <?php if ($page == 'noticias') {
                                                     echo 'current';
                                                 } ?>"><a href="./noticia.php">Noticias</a></li>

@@ -77,7 +77,7 @@ require 'controllers/indexController.php'; ?>
                                             <div class="content">
                                                 <h3><a href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck" style="color:inherit;">PROPIETARIOS</a></h3>
                                             </div>
-                                            <a class="purchased" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck" >Ver más</a>
+                                            <a class="purchased" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck">Ver más</a>
                                         </div>
                                     </div>
                                 </div>
@@ -157,7 +157,7 @@ require 'controllers/indexController.php'; ?>
                     <div class="separator"></div>
                     <div class="col-12 d-flex mt-5">
                         <div class="col-4 mt-5">
-                            <a href="#">
+                            <a href="detalle_noticia.php">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
@@ -179,7 +179,7 @@ require 'controllers/indexController.php'; ?>
                             </a>
                         </div>
                         <div class="col-4 mt-5">
-                            <a href="#">
+                            <a href="detalle_noticia.php">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
@@ -201,7 +201,7 @@ require 'controllers/indexController.php'; ?>
                             </a>
                         </div>
                         <div class="col-4 mt-5">
-                            <a href="#">
+                            <a href="detalle_noticia.php">
                                 <div class="card">
 
                                     <div class="imagen position-relative">
@@ -222,7 +222,7 @@ require 'controllers/indexController.php'; ?>
                                 </div>
                             </a>
                         </div>
-                       
+
 
 
                     </div>

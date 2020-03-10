@@ -658,7 +658,7 @@ img{
 }
 
 .header-top-one .top-left .links li a:hover{
-	color:#F04F36;
+	color:#969999;
 }
 .icono_correo{
 	color: #F26336;
@@ -677,7 +677,7 @@ img{
 	width:3000px;
 	height:57px;
 	margin-left:-215px;
-	background-color:#F04F36;
+	background-color:#969999;
 	-ms-transform: skewX(-25deg);
     -webkit-transform: skewX(-25deg);
     transform: skewX(-25deg);
@@ -903,7 +903,7 @@ img{
 	-o-transition:all 300ms ease;
 	-moz-transition:all 300ms ease;
 	transition:all 300ms ease;
-	background-color: #66302E;
+	background-color: #616161;
 }
 
 .header-style-two .main-box{
@@ -1172,12 +1172,12 @@ img{
 	opacity:1;
 }
 .main-menu .navigation > li:hover > a > .logo_pse{
-	background-color:#66302e;
+	background-color:#616161;
 	color: #fff;
 	
 }
 .main-menu .navigation > .item:hover > a{
-	background-color:#F04F36;
+	background-color:#969999;
 	color: #fff;
 	cursor: pointer;
 }
@@ -1186,7 +1186,7 @@ img{
 .main-menu .navigation > li.current > a{
 	color:#ffffff !important;
 	opacity:1;
-	background-color:#F04F36;
+	background-color:#969999;
 }
 
 .header-style-three .main-menu .navigation > li:hover > a,
@@ -2205,7 +2205,7 @@ img{
 	padding:16px 0px;
 	display:block;
 	color:#ffffff;
-	background-color:rgba(242, 120, 82, 0.55);
+	background-color: rgba(150, 153, 153, 0.57);
 }
 
 .property-section{
@@ -2246,7 +2246,7 @@ img{
 	padding:8px 25px;
 	border-radius:0px 0px 25px 0px;
 	font-family: 'Yantramanav', sans-serif;
-	background-color:#F26336;
+	background-color:#616161;
 }
 
 .property-block .inner-box .image .price{
@@ -2280,7 +2280,7 @@ img{
 
 .property-block .inner-box .lower-content .upper-box h3 a{
 	position:relative;
-	color:#F26336;
+	color:#616161;
 	transition:all 0.3s ease;
 	-moz-transition:all 0.3s ease;
 	-webkit-transition:all 0.3s ease;
@@ -2330,7 +2330,7 @@ img{
 	position:relative;
 	margin-right:6px;
 	font-size:17px;
-	color: #F04F36;
+	color: #969999;
 }
 
 .property-block .inner-box .lower-content .lower-box ul li:last-child{
@@ -3024,12 +3024,12 @@ img{
 }
 
 .services-block .inner-box:hover{
-	border-color:#F04F36;
+	border-color:#969999;
 }
 
 .services-block .inner-box .icon-box{
 	position:relative;
-	color:#BA3B38;
+	color:#616161;
 	font-size:60px;
 	line-height:1em;
 	margin-bottom:15px;
@@ -5571,7 +5571,7 @@ img{
 
 .property-detail .inner-box .upper-box .location{
 	position:relative;
-	color:#F04F36;
+	color:#969999;
 	font-size:14px;
 	font-weight:700;
 	margin-bottom:25px;
@@ -7119,7 +7119,7 @@ img{
 	width: 90%;
 	height: 1px;
 	position: absolute;
-	background-color: #F04F36;
+	background-color: #969999;
 }
 #ultimas_noticias .card-body {
 	color: black;
@@ -7129,7 +7129,7 @@ img{
 }
 
 .color_icono{
-	color: #F04F36 !important;
+	color: #969999 !important;
 }
 .lista:hover{
 	color: #F79C73;
@@ -7142,7 +7142,7 @@ img{
     padding: 26px 34px 22px;
     max-width: 300px;
 	margin-bottom: 15px;
-	background-color: #F04F36;
+	background-color: #969999;
 }
 .titulo{
 	position: relative;
@@ -7170,18 +7170,18 @@ img{
 }
 
 .footer_enlace{
-	color: #F04F36 !important;
+	color: #969999 !important;
 }
 .footer_enlace:hover{
 	color: #F79C73 !important;
 }
 #hover:hover , #hover:focus {
-	background-color: #F04F36 !important;
+	background-color: #969999 !important;
 	color: white !important;
 }
 
 #hover .iconos {
-	color: 	#F04F36 !important;
+	color: 	#969999 !important;
 }
 
 #hover:hover .iconos {
