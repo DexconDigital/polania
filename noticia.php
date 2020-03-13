@@ -8,12 +8,12 @@ include 'include/header.php'; ?>
         </div>
         <div class="col-10 offset-1">
             <div class="pull-left">
-                <h1>Noticias</h1>
+                <h1>Notas de Interés</h1>
             </div>
             <div class="pull-right">
                 <ul class="page-breadcrumb">
                     <li><a href="index.html">Inicio</a></li>
-                    <li>Noticias</li>
+                    <li>Notas de Interés</li>
                 </ul>
             </div>
         </div>

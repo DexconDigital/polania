@@ -153,7 +153,7 @@ require 'controllers/indexController.php'; ?>
             <div class="col-12">
                 <div class="sec-title centered">
                     <div class="title">Entradas recientes</div>
-                    <h2> Noticias de interés</h2>
+                    <h2> Notas de Interés</h2>
                     <div class="separator"></div>
                     <div class="col-12 d-flex mt-5">
                         <div class="col-4 mt-5">

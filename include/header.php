@@ -163,7 +163,7 @@ require './variables/variables.php';
 
                                     <li class="item <?php if ($page == 'noticias') {
                                                         echo 'current';
-                                                    } ?>"><a href="./noticia.php">Noticias</a></li>
+                                                    } ?>"><a href="./noticia.php">Notas de Interés</a></li>
                                     <li class="item <?php if ($page == 'contacto') {
                                                         echo 'current';
                                                     } ?>"><a href="./contacto.php">Contáctenos</a></li>
@@ -259,7 +259,7 @@ require './variables/variables.php';
                                 </li>
                                 <li class="item <?php if ($page == 'noticias') {
                                                     echo 'current';
-                                                } ?>"><a href="./noticia.php">Noticias</a></li>
+                                                } ?>"><a href="./noticia.php">Notas de Interés</a></li>
                                 <li class="item <?php if ($page == 'contacto') {
                                                     echo 'current';
                                                 } ?>"><a href="./contacto.php">Contáctenos</a></li>
