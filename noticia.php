@@ -1,5 +1,6 @@
 <?php $page = 'noticias';
-include 'include/header.php'; ?>
+include 'include/header.php';
+require 'controllers/noticiasController.php'; ?>
 <!-- Contenido -->
 <!-- Cabezera -->
 <section class="page-title" style="background-image:url(images/banner_blog.jpg);">
@@ -25,79 +26,18 @@ include 'include/header.php'; ?>
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="sec-title centered">
-                    <div class="col-12 d-flex">
-                        <div class="col-4 mt-5">
-                            <a href="detalle_noticia.php">
-                                <div class="card">
-
-                                    <div class="imagen position-relative">
-                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
-                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
-                                    </div>
-
-                                    <div class="card-body">
-
-                                        <h2>Noticia</h2>
-
-                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
-
-                                        <p class="position-relative pt-3">Carta de Presentación</p>
-
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-4 mt-5">
-                            <a href="detalle_noticia.php">
-                                <div class="card">
-
-                                    <div class="imagen position-relative">
-                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
-                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
-                                    </div>
-
-                                    <div class="card-body">
-
-                                        <h2>Noticia</h2>
-
-                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
-
-                                        <p class="position-relative pt-3">Carta de Presentación</p>
-
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-4 mt-5">
-                            <a href="detalle_noticia.php">
-                                <div class="card">
-
-                                    <div class="imagen position-relative">
-                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
-                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
-                                    </div>
-
-                                    <div class="card-body">
-
-                                        <h2>Noticia</h2>
-
-                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
-
-                                        <p class="position-relative pt-3">Carta de Presentación</p>
-
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-
-
+                    <div class="col-12 row justify-content-center">
+                    <?php if (isset($noticias_array)) {
+                        modelo_noticia($noticias_array);
+                    } else {
+                        echo '<div class="col 12">
+                        <h3 class="text-center">Muy pronto publicaremos contenido para ti<h3>
+                        </div>';
+                    }
+                    ?>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </section>

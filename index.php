@@ -1,6 +1,7 @@
 <?php $page = 'inicio';
 include 'include/header.php';
-require 'controllers/indexController.php'; ?>
+require 'controllers/indexController.php';
+require 'controllers/noticiasController.php'; ?>
 <!-- slide de imagenes -->
 <main id="hero">
     <div id="carouselHero" class="carousel slide" data-ride="carousel">
@@ -155,76 +156,15 @@ require 'controllers/indexController.php'; ?>
                     <div class="title">Entradas recientes</div>
                     <h2> Notas de Interés</h2>
                     <div class="separator"></div>
-                    <div class="col-12 d-flex mt-5">
-                        <div class="col-4 mt-5">
-                            <a href="detalle_noticia.php">
-                                <div class="card">
-
-                                    <div class="imagen position-relative">
-                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
-                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
-                                    </div>
-
-                                    <div class="card-body">
-
-                                        <h2>Noticia</h2>
-
-                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
-
-                                        <p class="position-relative pt-3">Carta de Presentación</p>
-
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-4 mt-5">
-                            <a href="detalle_noticia.php">
-                                <div class="card">
-
-                                    <div class="imagen position-relative">
-                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
-                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
-                                    </div>
-
-                                    <div class="card-body">
-
-                                        <h2>Noticia</h2>
-
-                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
-
-                                        <p class="position-relative pt-3">Carta de Presentación</p>
-
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-4 mt-5">
-                            <a href="detalle_noticia.php">
-                                <div class="card">
-
-                                    <div class="imagen position-relative">
-                                        <img src="images/no_image.png" class="card-img-top img_noticia" alt="...">
-                                        <div class="blanco font-weight-bold animacion_ver_mas col-12 p-0 text-center"> Haz click para ver más </div>
-                                    </div>
-
-                                    <div class="card-body">
-
-                                        <h2>Noticia</h2>
-
-                                        <h5 class="mb-3 text-muted"><span class="color_icono icon fas fas fa-calendar-alt"></span> 2/03/2020</h5>
-
-                                        <p class="position-relative pt-3">Carta de Presentación</p>
-
-                                    </div>
-
-                                </div>
-                            </a>
-                        </div>
-
-
-
+                    <div class="col-12 row justify-content-center mt-5">
+                    <?php if (isset($noticias_array)) {
+                        modelo_ultimas_noticia($noticias_array);
+                    } else {
+                        echo '<div class="col 12">
+                        <h3 class="text-center">Muy pronto publicaremos contenido para ti<h3>
+                        </div>';
+                    }
+                    ?>
                     </div>
                 </div>
             </div>

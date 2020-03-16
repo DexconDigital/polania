@@ -7118,7 +7118,7 @@ img{
 }
 #ultimas_noticias .card img {
 	transition: all 350ms ease;
-	/* height: 250px; */
+	height: 250px ;
 }
 #ultimas_noticias .card p::before {
 	content: "";

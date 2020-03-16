@@ -1,10 +1,11 @@
 <?php $page = 'noticias';
-include 'include/header.php'; ?>
+include 'include/header.php';
+require_once('controllers/detalle_noticiasController.php'); ?>
 <!-- Contenido -->
 <!-- Cabezera -->
 <!-- Fin cabezera -->
 <section class="mt-5 mb-5 ">
-    <div class="d-flex justify-content-center">
+    <div class="col-12 border">
         <div class="sec-title centered">
             <div class="title">
                 <font style="vertical-align: inherit;">
@@ -14,32 +15,31 @@ include 'include/header.php'; ?>
             </div>
             <h2>
                 <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Título de la Noticia</font>
+                    <font style="vertical-align: inherit;"><?php echo $nombre ?></font>
                 </font>
             </h2>
             <div class="separator"></div>
         </div>
     </div>
-    <div class="container-fluid cont_noticias ">
-        <div class="container">
+    <div class="col-12 border">
+        <div class="p-0">
             <div class="col-12">
-                <img id="cont_img_noticia" class="img-fluid-top mr-4 img_notica" src="images/no_image.png" alt="">
+                <img id="cont_img_noticia" class="img-fluid-top img_notica w-50 h-50" src="<?php echo $ruta_imagen ?>" alt="">
                 <p class="text-justify">
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellat. Possimus harum adipisci debitis nulla optio nostrum ducimus ab obcaecati quae provident sed consequuntur officiis exercitationem, aliquam necessitatibus praesentium? Expedita?
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellat. Possimus harum adipisci debitis nulla optio nostrum ducimus ab obcaecati quae provident sed consequuntur officiis exercitationem, aliquam necessitatibus praesentium? Expedita?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellat. Possimus harum adipisci debitis nulla optio nostrum ducimus ab obcaecati quae provident sed consequuntur officiis exercitationem, aliquam necessitatibus praesentium? Expedita? 
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellat. Possimus harum adipisci debitis nulla optio nostrum ducimus ab obcaecati quae provident sed consequuntur officiis exercitationem, aliquam necessitatibus praesentium? Expedita?
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellat. Possimus harum adipisci debitis nulla optio nostrum ducimus ab obcaecati quae provident sed consequuntur officiis exercitationem, aliquam necessitatibus praesentium? Expedita?Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellat. Possimus harum adipisci debitis nulla optio nostrum ducimus ab obcaecati quae provident sed consequuntur officiis exercitationem, aliquam necessitatibus praesentium? Expedita? 
+                    <?php echo $noticia ?>
                 </p>
             </div>
         </div>
-        <div class="container col-10 text-center mb-4  ">
+        <div class="container col-12 text-center mb-4">
             <div class="row d-flex justify-content-between">
                 <div class="col-lg-4 col-md-5 col-12">
-
-                    <span class="text-muted"> Publicado el: 9/03/2020</span>
+                    <span class="text-muted"> Publicado el: <?php echo $fecha_complete; ?></span>
                 </div>
                 <div class="col-lg-4 col-md-5 col-12">
-                    <a style="color:black;" href="'#'" download="Noticias.pdf"><i style="color:red;" class="fas fa-file-pdf mr-3"></i>Descargar Archivo Adjunto</a>
+                    <?php if ($ruta_archivo != $comparador . "") {
+                        echo '<a style="color:black;" href="' . $ruta_archivo . '" download="Noticias.pdf"><i style="color:red;" class="fas fa-file-pdf mr-3"></i>Descargar Archivo Adjunto</a>';
+                    } ?>
+                  
                 </div>
             </div>
         </div>

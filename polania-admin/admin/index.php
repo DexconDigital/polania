@@ -47,18 +47,30 @@ $sql = mysqli_query($con, $qry);
             $.get("mi_ejemplo.php?id=" + idnew + "",
                 function(data, status) {
                     var custom = JSON.parse(data);
-                    $('#nom_asesor_edit').val(custom.nombre);
-                    $('#cel_asesor_edit').val(custom.telefono);
-                    $('#wapp_asesor_edit').val(custom.celular);
+                    $('#nom_edit').val(custom.nombre);
+                    // $('#cel_edit').val(custom.telefono);
+                    $('#descrip_edit').val(custom.descripcion);
                     $('#cor_asesor_edit').val(custom.correo);
                     $('#cargo_edit').val(custom.cargo);
-                    // tinymce.get('descrip_edit').setContent(custom.descripcion);
+                    tinymce.get('noticia_edit').setContent(custom.noticia);
                     $('#img_edit').prop('src', custom.imagen);
+                    $('#archivo_edit').prop('src', custom.archivo);
                     $('#id_edit').val(idnew);
                 });
         }
     </script>
 </head>
+
+<style>
+    .form-control:focus{
+    color: #495057;
+    background-color: #fff;
+    border-color: #f04f36;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(240, 79, 54, 0.51);
+    }
+</style>
+
 
 <body onload="deshabilitaRetroceso()">
 
@@ -254,10 +266,140 @@ $sql = mysqli_query($con, $qry);
                                     echo '
                                     <div class="modal fade" id="editar_asesor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg modal-dialog-scrollable">
-                                        <form method="post" id="form_data_1" action="update_asesor.php" enctype="multipart/form-data">
+                                        <form method="post" id="form_data_1" action="update.php" enctype="multipart/form-data">
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Actualiza tu Noticia</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    
+                                                        <input type="hidden" name="id" id="id_edit" value="">
+                                                        <div class="form-group">
+                                                            <label for="" class="col-sm-3 col-form-label">Título Publicación</label>
+                                                            <input type="text" class="form-control" name="nom_edit" id="nom_edit" value="">
+                                                            <small id="tituloHepl" class="form-text text-muted">Primer nombre y primer apellido del asesor preferiblemente.</small>
+                                                        </div>
+                                                        <div class="form-group ">
+                                                            <label for="inputPassword" class="col-sm-3 col-form-label">Descripción Corta</label>
+                                                            <input type="text" class="form-control" name="descrip_edit" id="descrip_edit" value="">
+                                                            <small id="tituloHepl" class="form-text text-muted">Es importante llenar este campo.</small>
+                                                        </div>
+                                                        <div class="form-group ">
+                                                        <label for="inputPassword" class="col-sm-3 col-form-label">Descripción:</label>
+                                                             <div class="col-sm-12">
+                                                                 <textarea name="noticia_edit" id="noticia_edit"></textarea>
+                                                                 <small id="tituloHepl" class="form-text text-muted"> Ingrese el Contenido de la publicación y si es un texto copiado no olvide borrar el formato </small> 
+                                                             </div>
+                                                          </div>
+                                                        <div class="form-group mt-3 d-blok">
+                                                            <label for="" class="col-sm-3 col-form-label">Imagen actual:</label>
+                                                            <div class="col-sm-9">
+                                                                <img src="" alt="" id="img_edit" width="200px" height="auto">
+                                                            </div>
+                                                            <small id="tituloHepl" class="form-text text-muted"> Esta es la imagen que tienes actualmente.</small>
+                                                        </div>
+                                                        <div class="custom-file mt-3">
+                                                            <label for="" class="custom-file-label">Actualizar imagen</label>
+                                                            <input type="file" class="custom-file-input" name="imagen" id="imagen" accept="image/*">
+                                                            <small id="tituloHepl" class="form-text text-muted"> Ingrese una imagen que no supere las 2MB</small>
+                                                        </div>
+                                                    <div class="custom-file mt-3">
+                                                        <label for="" class="custom-file-label">Archivos</label>
+                                                        <input type="file" class="custom-file-input" name="archivo_edit" id="archivo_edit" accept="application/pdf">
+                                                        <small id="tituloHepl" class="form-text text-muted"> Ingrese una imagen que no supere las 2MB</small>
+                                                    </div>
+                                                        <input type="hidden" id="fecha" name="fecha">
+                                                </div>
+                                              
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn_cancelar" data-dismiss="modal">Cerrar</button>
+                                                    <button type="submit" class="btn btn_publicar">Actualizar</button>
+                                                </div>
+                                            </div>
+                                            </form>
+                                            </div>
+                                    </div>
+                                    ';
+
+                                    ?>
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        ¿Estas seguro que quieres eliminar este asesor, recuerda que si lo eliminas no podra rehacer los cambios?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn_cancelar" data-dismiss="modal">Cancelar</button>
+                                        <a class="btn btn_publicar btn-ok">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <script>
+                            $('#confirm-delete').on('show.bs.modal', function(e) {
+                                $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+                                $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+                            });
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal fade" id="lista_publicaciones" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5>
+                                <Lista class="modal-title" id="exampleModalLabel">Lista de mis Asesores
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nombre de Asesor</th>
+                                        <th scope="col">Editar</th>
+                                        <th scope="col">Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                while ($res =  mysqli_fetch_array($sql)) {
+
+                                    echo '<tr>
+                                       <td>' . $res["id"] . '</td>
+                                       <td>' . $res["nombre"] . '</td>
+
+                                      <td><a href="mi_ejemplo.php?id=' . $res["id"] . '" data-toggle="modal" data-id=' . $res["id"] . ' data-target="#editar_asesor" onclick="dataEdit(this)"><i style="color: #359829;" class="fas fa-edit"></i></a></td>
+
+                                      <td><a href="#" data-href="eliminar_asesor.php?id=' . $res["id"] . '" data-toggle="modal"            data-target="#confirm-delete"><i style="color: #53585A;"class="fas fa-trash-alt"></i></a></td>
+                                           </tr>';
+                                }
+
+                                echo '
+                                    <div class="modal fade" id="editar_asesor" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                        <form method="post" id="form_data_1" action="update_asesor.php" enctype="multipart/form-data">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Actualiza tu Asesor</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -322,12 +464,12 @@ $sql = mysqli_query($con, $qry);
                                     </div>
                                     ';
 
-                                    ?>
+                                ?>
 
                                 </tbody>
                             </table>
                         </div>
-
+                        
                         <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg">
                                 <div class="modal-content">
@@ -355,7 +497,7 @@ $sql = mysqli_query($con, $qry);
                         </script>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Modal eliminar noticia -->
             <div class="modal fade" id="eliminar-noticias" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
@@ -379,7 +521,7 @@ $sql = mysqli_query($con, $qry);
                 </div>
             </div>
             <!-- Modal de editar noticia -->
-            <div class="modal fade" id="editar_noticia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="editar_noticia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-scrollable">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -426,7 +568,7 @@ $sql = mysqli_query($con, $qry);
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- Modal publicar asesores-->
             <!-- <div class="modal fade" id="publica_asesores" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-scrollable" role="document">
