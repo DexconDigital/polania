@@ -340,7 +340,7 @@ $sql = mysqli_query($con, $qry);
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        ¿Estas seguro que quieres eliminar este asesor, recuerda que si lo eliminas no podra rehacer los cambios?
+                                        ¿Estas seguro que quieres eliminar esta noticia, recuerda que si lo eliminas no podra rehacer los cambios?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn_cancelar" data-dismiss="modal">Cancelar</button>

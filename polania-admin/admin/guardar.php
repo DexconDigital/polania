@@ -13,10 +13,10 @@ $fecha = date("Y-m-d");
 $id_inmo = 16;
 $nombre_ar = $_FILES['archivo']['name'];
 
- // echo $nombre, ' ', $descripcion, '  ',$noticia,'  ', $foto ,'  ',$ruta ,'   ', $ruta ,'', $nombre_foto,'    ',$fecha, '  ',$destino, '',$id_inmo, ' ', $nombre_ar,  
-  //die();
+//  echo $nombre, ' ', $descripcion, '  ',$noticia,'  ', $foto ,'  ',$ruta ,'   ', $ruta ,'', $nombre_foto,'    ',$fecha, '  ',$destino, '',$id_inmo, ' ', $nombre_ar,  
+//   die();
 
-$limite_kb = 850;
+$limite_kb = 2;
 if($nombre_ar != ""){
     $tipo = $_FILES['archivo']['type'];
     $tamanio = $_FILES['archivo']['size'];
@@ -27,11 +27,12 @@ if($nombre_ar != ""){
         $nombre_archivo = str_replace(" ","",$nombre_ar);
         $destinos="archivo/".$nombre_archivo; 
     }else{
-        echo "Archivo demaciado Grande";
+        echo "";
     }
     $con = Conect();
         copy($rutas,$destinos);
 }
+
 
 
 
