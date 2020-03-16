@@ -17,11 +17,11 @@ $tipo = $_FILES['archivo_edit']['type'];
 $tamanio = $_FILES['archivo_edit']['size'];
 $rutas = $_FILES['archivo_edit']['tmp_name'];
 $nombre_archivo = str_replace(" ","-",$nombre_ar);
-$destinos="archivo/".$nombre_archivo;
-$comparador_archivo="archivo/";
+$destinos="archivos/".$nombre_archivo;
+$comparador_archivo="archivos/";
 if($tamanio <= $limite_kb * 1024){
     $nombre_archivo = str_replace(" ","",$nombre_ar);
-    $destinos="archivo/".$nombre_archivo; 
+    $destinos="archivos/".$nombre_archivo; 
 }else{
     echo "Archivo demaciado Grande";
 }
@@ -57,6 +57,7 @@ if($destino != $comparador_fotos && $destinos == $comparador_archivo){
         header("Location: index.php");
     }
 }
+
 // actualizar archivo pero no imagen
 if($destino == $comparador_fotos && $destinos != $comparador_archivo){
     copy($rutas,$destinos);
