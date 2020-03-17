@@ -215,6 +215,10 @@ box-shadow: 0 0 0 0.2rem rgb(240, 79, 54) !important;
     position: relative;
     padding: 80px 0px 100px;
 }
+#option_pse{
+
+    padding: 12px 32px 16px;
+ }
 @media (max-width: 768.98px) {
     #hero .overlay{
         font-size: 20px;
@@ -255,6 +259,10 @@ box-shadow: 0 0 0 0.2rem rgb(240, 79, 54) !important;
         overflow-y:hidden;
         height: 200vh;
     }
+    #option_pse{
+
+        padding: 20px 18px 27px;
+     }
 }
 .footer-style-two {
     background-color: #e4e4e4;
@@ -309,3 +317,9 @@ box-shadow: 0 0 0 0.2rem rgb(240, 79, 54) !important;
     color: white !important;
     border: none;
 }
+@media (max-width: 1140px) {
+    #option_pse{
+
+        padding: 21px 18px 27px;
+     }
+ }

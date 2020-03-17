@@ -337,7 +337,7 @@
 	}
 	
 	.main-menu .collapse {
-	   max-height:300px;
+	   max-height:406px;
 		overflow:auto;
 		float:none;
 		width:100%;
@@ -379,9 +379,10 @@
 		display:block;
 		text-align:right;
 		width:100%;
-		padding:12px 0px;
+		padding:0px 0px;
 		right:0px;
 		z-index:12;
+		margin-bottom: 7%;
 	}
 	
 	.main-menu .navbar-header .navbar-toggle{
@@ -392,6 +393,8 @@
 		margin:-2px 0px 0px 0px;
 		border-radius:0px;
 		background:#061c2f;
+		/* top: 81px;
+    	margin-right: 20px; */
 	}
 	
 	.main-menu .navbar-header .navbar-toggle .icon-bar{
@@ -631,7 +634,7 @@
 	.main-menu{
 		width:100%;
 		padding-right:0px !important;
-		margin-top: -85px;
+		margin-top: -67px;
 	}
 	
 	.main-header .header-top .top-left,

@@ -122,7 +122,7 @@ require './variables/variables.php';
                     <div class="logo-box p-0">
                         <div class="logo">
                             <a href="index.php" class="ml-4">
-                                <img src="./images/polania_color.png" alt="Logo de la inmobiliaria Grr" style="height:70px; width:auto;">
+                                <img src="./images/polania_color.png" alt="Logo Polania Inmobiliaria" style="height:70px; width:auto;">
                             </a>
                         </div>
                     </div>
@@ -153,8 +153,8 @@ require './variables/variables.php';
                                                         echo 'current';
                                                     } ?>"><a href="./inmuebles.php?">Inmuebles</a></li>
                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" style="padding: 12px 32px 16px;" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
-                                        <div class="dropdown-menu" style="background-color: #616161;">
+                                        <a id="option_pse" class="nav-link dropdown-toggle"  data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Clientes</a>
+                                        <div id="menu" class="dropdown-menu"style="background-color: #616161;">
                                             <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck"><i class="fas fa-home"></i> Arrendatarios</a>
                                             <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck"><i class="fas fa-key"></i> Propietarios</a>
                                             <a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd"></i> Pagos PSE</a>
@@ -167,7 +167,7 @@ require './variables/variables.php';
                                     <li class="item <?php if ($page == 'contacto') {
                                                         echo 'current';
                                                     } ?>"><a href="./contacto.php">Contáctenos</a></li>
-                                    <li>
+                                    <li class="item">
                                         <a href="#" target="_blank" class="p-0 ml-3"> <img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo_pse" style="width:3.8em;"></a>
                                     </li>
                                 </ul>

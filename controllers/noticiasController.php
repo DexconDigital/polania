@@ -100,7 +100,7 @@ function modelo_ultimas_noticia($r)
         echo '
     
 
-                    <div class="col-4 mt-5">
+                    <div class="col-12 col-md-6 col-lg-4 mt-5">
                             <a href="detalle_noticia.php?co=' . $r[$i]['id'] . '">
                                 <div class="card">
 

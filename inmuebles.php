@@ -30,17 +30,19 @@ require 'controllers/inmueblesController.php'; ?>
                 <div class="row">
                     <!-- Lista de inmuebles  -->
 
-                    <div class="col-12 col-lg-11 col-md-10 row justify-content-start" id="propiedades_destacadas">
-                        <!-- propiedades -->
-                        <?php
-                        if (is_array($api)) {
-                            listar_inmuebles($api['Inmuebles']);
-                        } else {
-                            echo '<div class="col-12">
+                    <div class="col-12 col-lg-11 col-md-12 justify-content-start" id="propiedades_destacadas">
+                        <div class="row">
+                            <!-- propiedades -->
+                            <?php
+                            if (is_array($api)) {
+                                listar_inmuebles($api['Inmuebles']);
+                            } else {
+                                echo '<div class="col-12">
                         <h2 class="text-center" >No se encontraron inmuebles</h2>
                     </div>';
-                        }
-                        ?>
+                            }
+                            ?>
+                        </div>
 
                     </div>
                 </div>

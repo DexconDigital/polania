@@ -23,22 +23,24 @@ require 'controllers/noticiasController.php'; ?>
 <!-- Fin cabezera -->
 <section id="ultimas_noticias">
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        
             <div class="col-12">
                 <div class="sec-title centered">
-                    <div class="col-12 row justify-content-center">
-                    <?php if (isset($noticias_array)) {
-                        modelo_noticia($noticias_array);
-                    } else {
-                        echo '<div class="col 12">
+                    <div class="col-12 d-flex justify-content-center flex-wrap">
+                        
+                            <?php if (isset($noticias_array)) {
+                                modelo_noticia($noticias_array);
+                            } else {
+                                echo '<div class="col 12">
                         <h3 class="text-center">Muy pronto publicaremos contenido para ti<h3>
                         </div>';
-                    }
-                    ?>
+                            }
+                            ?>
+                        
                     </div>
                 </div>
             </div>
-        </div>
+        
     </div>
 </section>
 <!-- fin contenido -->

@@ -971,7 +971,7 @@ img{
 
 .main-header .nav-outer{
 	position:relative;
-	float:right;
+	/* float:right; */
 	margin-top:26px;
 	top:5px;
 	margin-right: 4%;
@@ -1100,7 +1100,7 @@ img{
 
 .main-menu{
 	position:relative;
-	float:left;
+	float:right;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -2196,7 +2196,7 @@ img{
 .house-block .inner-box .image .overlay-box h3{
 	position:relative;
 	color:#ffffff;
-	font-size:40px;
+	font-size:36px;
 	font-weight:700;
 	text-align:center;
 	text-transform:uppercase;
@@ -5008,6 +5008,7 @@ img{
 
 .about-section .image-column{
 	position:relative;
+	margin-bottom: 5%;
 }
 
 .about-section .image-column .image{
@@ -5944,10 +5945,6 @@ img{
 
 ***/
 
-.contact-page-section{
-	position:relative;
-	padding:135px 0px 130px;
-}
 
 /*Contact Form*/
 
@@ -7152,6 +7149,75 @@ img{
 	margin-bottom: 15px;
 	background-color: #969999;
 }
+@media (max-width: 425px) {
+	.direccion{
+		display: none;
+	}
+}
+@media (min-width: 360px) {
+	.text-quienes{
+		padding-left: 30px !important;
+	}
+	#menu{
+		width: 100%;
+		text-align: center;
+		left: 4px !important;
+}
+.btn_ficha{
+	margin-bottom: 3%;
+}
+.contact-page-section{
+	position:relative;
+	padding: 72px 0px 102px;
+}
+.sidebar-widget{
+	margin-top: 8%;
+}
+.detalle_asesor{
+	padding: 0;
+}
+}
+@media (min-width: 425px) {
+	.text-quienes{
+		padding-left: 37px !important;
+	}
+	#menu{
+		width: 100%;
+		text-align: center;
+		left: 4px;
+}
+.detalle_asesor{
+	padding: inherit;
+}
+}
+@media (min-width: 768px) {
+	.text-quienes{
+		padding-left: 37px !important;
+	}
+	#menu{
+		width: inherit;
+		text-align: center;
+		left: 4px;
+}
+.contact-page-section{
+	position:relative;
+	padding: 72px 0px 102px;
+}
+.sidebar-widget{
+	margin-top: 0%;
+}
+.btn_ficha{
+	margin-bottom: inherit;
+}
+}
+
+	@media (max-width: 425px) {
+		.mapa{
+			height: 30vh;	
+		}
+	}
+
+
 .titulo{
 	position: relative;
     color: #ffffff;
@@ -7249,6 +7315,7 @@ img{
 
 #cont_img_noticia{
 	float: left;
-	object-fit: contain;
-    
+	object-fit: cover;
+    box-shadow: 2px 2px 6px 3px grey;
+	
 }

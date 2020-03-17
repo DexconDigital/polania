@@ -82,7 +82,7 @@
                             <input type="number" placeholder="Precio Máximo" id="precio_maximo_buscar" class="form-control">
                         </div>
                         <!-- btn buscar -->
-                        <div class="form-group col-12 col-md-6 col-lg-6 pt-md-5 d-flex justify-content-center">
+                        <div class="form-group col-12 col-md-12 col-lg-6 pt-md-5 d-flex justify-content-center">
                             <br class="d-none d-md-block">
                             <button type="button" id="buscar" class="btn btn-primary btn-lg btn-block col-lg-12">Buscar</button>
                         </div>

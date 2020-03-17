@@ -18,7 +18,7 @@ $tamanio = $_FILES['archivo_edit']['size'];
 $rutas = $_FILES['archivo_edit']['tmp_name'];
 $nombre_archivo = str_replace(" ", "-", $nombre_ar);
 $destinos = "archivo/" . $nombre_archivo;
-$comparador_archivo = "archivos/";
+$comparador_archivo = "archivo/";
 if ($tamanio <= $limite_kb * 1024) {
     $nombre_archivo = str_replace(" ", "", $nombre_ar);
     $destinos = "archivo/" . $nombre_archivo;
@@ -55,11 +55,13 @@ if ($destino != $comparador_fotos && $destinos == $comparador_archivo) {
     $sql = mysqli_query($con, $qry);
 
     if (!$sql) {
+        
         echo  "<script language='javascript'>
                     alert('No se logro insertar');
                 window.location.href='index.php'
               </script>";
     } else {
+        
         echo  "<script language='javascript'>
                     alert('Se inserto con exito');
                 window.location.href='index.php'
@@ -76,6 +78,7 @@ if ($destino == $comparador_fotos && $destinos != $comparador_archivo) {
     $sql = mysqli_query($con, $qry);
 
     if (!$sql) {
+        
         echo  "<script language='javascript'>
                 alert('No se logro insertar');
                 window.location.href='index.php'

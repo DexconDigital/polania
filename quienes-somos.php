@@ -29,8 +29,8 @@ include 'include/header.php'; ?>
     <div class="container-fluid">
         <div class="row justify-content-center">
             <!--Content Column-->
-            <div class="content-column col-12 col-md-10 pl-0 pr-0 ml-0 d-flex align-items-center">
-                <div class="col-6 pl-0">
+            <div class="content-column col-12 col-md-11 pl-0 ml-0 d-flex flex-wrap align-items-center ">
+                <div class="col-lg-6 col-md-12 col-12 text-quienes">
                     <div class="inner-column">
                         <!--Sec Title-->
                         <div class="sec-title">
@@ -56,7 +56,7 @@ include 'include/header.php'; ?>
                         </div>
                     </div>
                 </div>
-                <div class="col-6 pr-0">
+                <div class="col-lg-6 col-md-12 col-12">
                     <!--Image Column-->
                     <div class="image-column col-12  col-md-12 d-flex pr-0  aling-items-center text-center">
                         <img src="images/quienes_somos.jpg" alt="imagen que acompaña el quienes somos de la empresa." style="width:100%; height:100%;">
@@ -64,15 +64,15 @@ include 'include/header.php'; ?>
                 </div>
             </div>
 
-            <div class="content-column col-12 col-md-11  ml-0 d-flex align-items-center">
-                <div class="col-6  ">
-                    <div class="image-column col-12  col-md-12 d-flex  aling-items-center text-center">
+            <div class="content-column col-12 col-md-11  ml-0 d-flex flex-wrap align-items-center">
+                <div class="col-lg-6 col-md-12 col-12 ">
+                    <div class="image-column col-12  col-md-12 d-flex p-0 aling-items-center text-center">
                         <img src="images/valores.jpg" alt="imagen que acompaña el quienes somos de la empresa." style="width:100%; height:100%;">
                     </div>
                 </div>
-                <div class="col-6 ">
+                <div class="col-lg-6 col-md-12 col-12 ">
                     <!-- Columna de mision y vision -->
-                    <div class="content-column col-12 col-md-12">
+                    <div class="content-column col-12 col-md-12 pr-0">
                         <div class="inner-column">
                             <!--Sec Title-->
                             <div class="sec-title mt-4">
@@ -92,7 +92,7 @@ include 'include/header.php'; ?>
                             </div>
                         </div>
                     </div>
-                    <div class="content-column col-12 col-md-12">
+                    <div class="content-column col-12 col-md-12 pr-0">
                         <div class="inner-column">
                             <!--Sec Title-->
                             <div class="sec-title">

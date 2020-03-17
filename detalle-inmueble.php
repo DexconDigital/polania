@@ -1,5 +1,4 @@
 <?php $page = 'inmuebles';
-include 'include/header.php';
 require 'controllers/detalleInmuebleController.php';
 ?>
 <link rel="stylesheet" href="./css/style.css">
@@ -14,7 +13,9 @@ require 'controllers/detalleInmuebleController.php';
 <meta property="og:image:width" content="300">
 <meta property="og:image:height" content="300">
 <!-- fin de datos para compartir por facebook -->
-
+<?php 
+include 'include/header.php';
+?>
 
 <style>
     #map {
@@ -121,7 +122,7 @@ require 'controllers/detalleInmuebleController.php';
                     <div class="row mt-4">
                         <div class="col-12">
                             <ul class="row align-items-center pr-0">
-                                <li class="col-sm-12 col-xl-auto mr-auto d-flex justify-content-center"><a class="btn boton-azul" style="font-size:1.8rem; color:white;" href="https://simicrm.app/mcomercialweb/fichas_tecnicas/fichatec3.php?reg=108-<?php echo $co ?>" target="_blank">Imprimir Ficha</a></li>
+                                <li class="col-sm-12 col-xl-auto mr-auto d-flex justify-content-center btn_ficha"><a class="btn boton-azul" style="font-size:1.8rem; color:white;" href="https://simicrm.app/mcomercialweb/fichas_tecnicas/fichatec3.php?reg=108-<?php echo $co ?>" target="_blank">Imprimir Ficha</a></li>
                                 <li class="col-6 col-md-auto ml-auto m-top font-weight-bold">Compartir por: </li>
                                 <li class="col-2 col-md-auto m-top"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.polania.com%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D<?php echo $co; ?>" target="_blank"><img src="images/facebook.png" alt="" style="height: 30px;"></a></li>
                                 <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.polania.com%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D' . $co . '&text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] ?>" target="_blank"><img src="images/twitter.png" alt="" style="height: 30px;"></i></a></li>
@@ -311,7 +312,7 @@ require 'controllers/detalleInmuebleController.php';
                     <!-- Properties Posts -->
                     <div class="sidebar-widget properties-posts" id="p_similares">
                         <div class="sidebar-title">
-                            <h3 class="text-md-center"> Contacto con el asesor</h3>
+                            <h3 class="text-center"> Contacto con el asesor</h3>
                             <div class="separator mx-auto"></div>
                         </div>
                         <div class="col-12 d-flex justify-content-center">
@@ -320,7 +321,7 @@ require 'controllers/detalleInmuebleController.php';
                             </div>
                         </div>
                         <div class="col-12 d-flex justify-content-center mb-5">
-                            <div class="col-9">
+                            <div class="col-9 detalle_asesor">
                                 <ul>
                                     <li><span class="color_icono icon fas fas fa-user mr-2"></span> <?php echo $asesor['ntercero']; ?></li>
                                     <li><span class="color_icono icon fas fas fa-phone mr-2"></span><a class="acesor_enlace" href="tel:+57<?php echo $asesor['celular']; ?>"><?php echo $asesor['celular']; ?></a></li>
@@ -333,7 +334,7 @@ require 'controllers/detalleInmuebleController.php';
                         <div class="col-12 mt-5">
                             <div class="">
                                 <div class="sidebar-title">
-                                    <h3 class="text-md-center"> Propiedades similares</h3>
+                                    <h3 class="text-center"> Propiedades similares</h3>
                                     <div class="separator mx-auto"></div>
 
                                     <?php similares($r['IdCiudad'], $r['IdTpInm']); ?>

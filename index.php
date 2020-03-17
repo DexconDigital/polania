@@ -156,15 +156,17 @@ require 'controllers/noticiasController.php'; ?>
                     <div class="title">Entradas recientes</div>
                     <h2> Notas de Interés</h2>
                     <div class="separator"></div>
-                    <div class="col-12 row justify-content-center mt-5">
-                    <?php if (isset($noticias_array)) {
-                        modelo_ultimas_noticia($noticias_array);
-                    } else {
-                        echo '<div class="col 12">
+                    <div class="col-12 justify-content-center mt-5">
+                        <div class="d-flex justify-content-center">
+                            <?php if (isset($noticias_array)) {
+                                modelo_ultimas_noticia($noticias_array);
+                            } else {
+                                echo '<div class="col 12">
                         <h3 class="text-center">Muy pronto publicaremos contenido para ti<h3>
                         </div>';
-                    }
-                    ?>
+                            }
+                            ?>
+                        </div>
                     </div>
                 </div>
             </div>
