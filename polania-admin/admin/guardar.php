@@ -13,8 +13,6 @@ $fecha = date("Y-m-d");
 $id_inmo = 16;
 $nombre_ar = $_FILES['archivo']['name'];
 
-//  echo $nombre, ' ', $descripcion, '  ',$noticia,'  ', $foto ,'  ',$ruta ,'   ', $ruta ,'', $nombre_foto,'    ',$fecha, '  ',$destino, '',$id_inmo, ' ', $nombre_ar,  
-//   die();
 
 $limite_kb = 2;
 if($nombre_ar != ""){
@@ -30,9 +28,10 @@ if($nombre_ar != ""){
         echo "";
     }
     $con = Conect();
-        copy($rutas,$destinos);
+    copy($rutas,$destinos);
 }
 
+//  Lorem Ipsum es simplemente un texto ficticio de la industria de impresión y composición tipográfica. Lorem Ipsum ha sido el texto ficticio estándar de la industria desde el año 1500, cuando una impresora desconocida tomó una galera de tipo y la mezcló para hacer un libro de muestras. Ha sobrevivido no solo cinco siglos, sino también el salto a la composición electrónica, permaneciendo esencialmente sin cambios.
 
 
 
