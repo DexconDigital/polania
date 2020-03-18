@@ -48,7 +48,7 @@ function modelo_noticia($r)
         echo '
     
 
-                    <div class="col-4 mt-5">
+                    <div class="col-lg-4 col-md-4 col-12 mt-5">
                             <a href="detalle_noticia.php?co=' . $r[$i]['id'] . '">
                                 <div class="card">
 

@@ -7189,6 +7189,9 @@ img{
 .detalle_asesor{
 	padding: inherit;
 }
+.direc_movil{
+	display: inherit;
+}
 }
 @media (min-width: 768px) {
 	.text-quienes{
@@ -7198,6 +7201,9 @@ img{
 		width: inherit;
 		text-align: center;
 		left: 4px;
+}
+.direc_movil{
+	display: none;
 }
 .contact-page-section{
 	position:relative;

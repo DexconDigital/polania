@@ -157,7 +157,7 @@ require 'controllers/noticiasController.php'; ?>
                     <h2> Notas de Interés</h2>
                     <div class="separator"></div>
                     <div class="col-12 justify-content-center mt-5">
-                        <div class="d-flex justify-content-center">
+                        <div class="d-flex justify-content-center flex-wrap">
                             <?php if (isset($noticias_array)) {
                                 modelo_ultimas_noticia($noticias_array);
                             } else {
