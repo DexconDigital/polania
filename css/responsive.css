@@ -388,12 +388,12 @@
 	.main-menu .navbar-header .navbar-toggle{
 		display:inline-block;
 		z-index:12;
-		border:1px solid #061c2f;
+		border:1px solid #383336;
 		float:none;
 		margin:-2px 0px 0px 0px;
 		border-radius:0px;
-		background:#061c2f;
-		top: -43px;
+		background:#383336;
+		top: -1px;
     	/* margin-right: 20px;  */
 	}
 	
@@ -635,7 +635,7 @@
 		width:100%;
 		padding-right:0px !important;
 		margin-top: -67px;
-		top: 52px;
+		top: -1px;
 	}
 	
 	.main-header .header-top .top-left,
