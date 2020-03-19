@@ -7326,3 +7326,10 @@ img{
     box-shadow: 2px 2px 6px 3px grey;
 	
 }
+
+#direccion{
+	color: white;
+}
+#direccion:hover{
+	color: #F79C73;
+}

@@ -10,7 +10,7 @@
                 <h2 id="color" style="font-size:30px">Datos de Contacto</h2>
                 <div class="separator"></div>
                 <ul class="mt-5">
-                <li class="mb-4 lista direc_movil"><span class="color_icono icon fas fa-map-marker-alt"></span><span class="ml-4"><?php echo $datos_contacto['direccion']['direccion'] ?></span></li>
+                <li class="mb-4 lista direc_movil"><span class="color_icono icon fas fa-map-marker-alt"></span><a id="direccion" href="https://www.google.com/maps/place/Oficina+406,+Cl.+73+%239-42,+Bogot%C3%A1/@4.6575568,-74.0587533,17z/data=!3m1!4b1!4m5!3m4!1s0x8e3f9a5ce079502f:0xb732007c0d9bf021!8m2!3d4.6575515!4d-74.0565646" class="ml-4" target="_blanck"><?php echo $datos_contacto['direccion']['direccion'] ?></a></li>
                     <li class="mb-4 lista"><span class="color_icono icon fas fas fa-phone"></span><a href="tel:<?php echo $datos_contacto['telefono_fijo']['link'] ?>" class="ml-4" style="color:inherit;"><?php echo $datos_contacto['telefono_fijo']['imprimir'] ?></a></li>
                     <li class="mb-4 lista"><span class="color_icono icon fas fas fa-mobile-alt"></span><a href="tel:<?php echo $datos_contacto['celular']['link'] ?>" class="ml-4" style="color:inherit;"><?php echo $datos_contacto['celular']['imprimir'] ?></a></li>
                     <li class="mb-4 lista"><span class="color_icono icon fas fas fa-envelope"></span><a href="mailto:<?php echo $datos_contacto['correo']['correo'] ?>" class="ml-4" style="color:inherit;"><?php echo $datos_contacto['correo']['correo'] ?></a></li>

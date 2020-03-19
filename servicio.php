@@ -2,7 +2,7 @@
 include 'include/header.php'; ?>
 <!-- Contenido -->
 <!-- Cabezera -->
-<section class="page-title" style="background-image:url(images/banner_servicios.jpg);">
+<section class="page-title" style="background-image:url(images/banner_servicios5.jpg);">
     <div class="container-fluid">
         <div class="row">
         </div>
