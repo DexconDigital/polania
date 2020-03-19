@@ -29,7 +29,7 @@ include 'include/header.php'; ?>
 
         <!--Contact Form-->
         <div class="contact-form">
-            <form class="needs-validation" novalidate action="envia.php" method="post" id="contact-form">
+            <form class="needs-validation" novalidate action="email/enviarCorreo.php" method="post" id="contact-form">
                 <div class="row">
                     <div class="form-group col-md-6 col-sm-6 col-xs-12">
                         <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
