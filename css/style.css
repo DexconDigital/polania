@@ -7148,6 +7148,7 @@ img{
     max-width: 300px;
 	margin-bottom: 15px;
 	background-color: #969999;
+	display: none;;
 }
 @media (max-width: 425px) {
 	.direccion{
@@ -7203,7 +7204,7 @@ img{
 		left: 4px;
 }
 .direc_movil{
-	display: none;
+	display: inherit;
 }
 .contact-page-section{
 	position:relative;

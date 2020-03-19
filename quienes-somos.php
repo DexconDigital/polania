@@ -114,6 +114,37 @@ include 'include/header.php'; ?>
                     </div>
                 </div>
             </div>
+            <div class="content-column col-12 col-md-11 pl-0 ml-0 d-flex flex-wrap align-items-end">
+                <div class="col-lg-6 col-md-12 col-12 text-quienes">
+                    <div class="inner-column">
+                        <!--Sec Title-->
+                        <div class="sec-title">
+                            <h2>
+                                <font style="vertical-align: inherit;">
+                                    <font style="vertical-align: inherit;">Valores</font>
+                                </font>
+                            </h2>
+                            <div class="separator"></div>
+                        </div>
+                        <div class="bold-text">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit; text-aling:justify;">
+                                    <?php echo $texto_quienes_somos['valores'][0] ?><br>
+                                    <?php echo $texto_quienes_somos['valores'][1] ?><br>
+                                    <?php echo $texto_quienes_somos['valores'][2] ?><br>
+                                    <?php echo $texto_quienes_somos['valores'][3] ?><br>
+                                </font>
+                            </font>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12">
+                    <!--Image Column-->
+                    <div class="image-column col-12  col-md-12 d-flex pr-0  aling-items-center text-center">
+                        <img src="images/valor.jpg" alt="imagen que acompaña el quienes somos de la empresa." style="width:100%; height:100%;">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>

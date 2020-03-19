@@ -30,13 +30,6 @@
         <div class="col-12 col-lg-6 col-md-6 p-0 d-flex mapa">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.6431869068188!2d-74.0587532857369!3d4.65755684332822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9a5ce079502f%3A0xb732007c0d9bf021!2sOficina%20406%2C%20Cl.%2073%20%239-42%2C%20Bogot%C3%A1!5e0!3m2!1ses!2sco!4v1583181126033!5m2!1ses!2sco" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         </div>
-        <div class=" col-4  direccion">
-
-            <h3 class="titulo">Dirección</h3>
-            <div class="text">
-                <p>Calle 73 No. 9 – 42 Oficina 406 – Bogotá D.C</p>
-            </div>
-        </div>
     </div>
 
 
@@ -46,8 +39,8 @@
         <div class="auto-container">
             <div class="row">
                 <div class="col-12">
-                    <div class="copyright text-center">Diseñado y Desarrollado por <a class="footer_enlace" href="www.dexcondigital.com" target="_blanck">Dexcon Digital.</a> ©Copyright 2020 para Inmobiliaria
-                        Polania. Todos los derechos reservados. <a class="footer_enlace" href="archivos/POLITICA_DE_TRATAMIENTO_DE_DATOS.pdf" target="_blanck">Política de tratamiento de datos</a></div>
+                    <div class="copyright text-center">Diseñado y Desarrollado por <a class="footer_enlace" href="www.dexcondigital.com" target="_blanck">Dexcon Digital.</a> ©Copyright 2020 para Polania Inmobiliaria. 
+                    Todos los derechos reservados. <a class="footer_enlace" href="archivos/POLITICA_DE_TRATAMIENTO_DE_DATOS.pdf" target="_blanck">Política de tratamiento de datos</a></div>
                 </div>
             </div>
         </div>

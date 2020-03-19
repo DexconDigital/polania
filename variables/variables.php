@@ -103,11 +103,17 @@ $texto_quienes_somos = [
 
 	"mision" => [
 		"titulo" => "Misión",//en negrita
-		"parrafo" => "Nuestra misión es brindar servicios con eficiencia y calidad, permitiéndonos mejorar continuamente y de manera oportuna tanto en los requerimientos como en las necesidades de nuestros clientes.",
+		"parrafo" => "Ofrecer soluciones integrales y efectivas para satisfacer las necesidades inmobiliarias de nuestros clientes que protegen el patrimonio de nuestros propietarios y los derechos de nuestros arrendatarios.",
 	],
 	"vision" => [
 		"titulo" => "Visión",//en negrita
-		"parrafo" => "Para el año 2025 extender nuestros servicios y asesorías en Bogotá y otras ciudades, con el más alto compromiso y credibilidad en el sector inmobiliario; generando tranquilidad a nuestros clientes y cuidando su patrimonio como si fuera propio.",
+		"parrafo" => "En el año 2025 seremos reconocidos por nuestros grupos de interés como una de las más efectivas, comprometidas y confiables firmas inmobiliarias en La ciudad de Bogotá y otras ciudades de Colombia.",
+	],
+	"valores" => [
+             0 => "<strong>1. Orientación al cliente:</strong> Nos enfocamos en la satisfacción oportuna de las necesidades y expectativas de nuestros clientes, comprendiendo que más propietarios y arrendatarios son personas y familias que buscan mejorar y proteger su calidad de vida y proteger su patrimonio.",
+             1 => "<strong>2. Innovación:</strong> Tenemos en cuenta las necesidades de nuestros grupos de interés y nos apoyamos en la tecnología y la innovación para contribuir soluciones a los desafíos de la vida actual y el mercado inmobiliario.",
+             2 => "<strong>3. Transparencia:</strong> Estamos comprometidos con la transparencia y el respeto por los derechos de todos nuestros grupos de interés.",
+             3 => "<strong>4. Trabajo en equipo:</strong> Nuestros clientes son el centro y razón de ser de nuestra empresa. Trabajamos como un solo equipo para conectarnos con nuestros clientes y sus objetivos.",
 	],
 ];
 
