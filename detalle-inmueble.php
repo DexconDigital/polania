@@ -5,14 +5,14 @@ require 'controllers/detalleInmuebleController.php';
 <link rel="stylesheet" href="mapas/leaflet.css" crossorigin="" />
 <!-- Datos para compartir por facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content="<?php echo 'https://' . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]; ?>" />
-<meta property="og:title" content="<?php echo $r['Tipo_Inmueble'] . ' en ' . $r['Gestion']; ?>" />
-<meta property="og:description" content="Inmueble ubicado en: <?php echo $r['barrio'] . ', ' . $r['ciudad'] . ', ' . $r['depto']; ?> " />
-<meta property="og:image" itemprop="image" content="<?php echo $r['fotos'][0]['foto']; ?>" />
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="300">
-<meta property="og:image:height" content="300">
-<!-- fin de datos para compartir por facebook -->
+    <meta property="og:url" content="<?php echo 'https://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];?>" />
+    <meta property="og:title" content="<?php echo $r['Tipo_Inmueble'].' en '.$r['Gestion'];?>" />
+    <meta property="og:description" content="Inmueble ubicado en: <?php echo $r['barrio'] .', '. $r['ciudad'].', '.$r['depto'];?> " />
+    <meta property="og:image" itemprop="image" content="<?php echo $r['fotos'][0]['foto'];?>" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <!-- fin de datos para compartir por facebook -->
 <?php 
 include 'include/header.php';
 ?>
