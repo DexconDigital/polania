@@ -2,6 +2,15 @@
 include 'include/header.php';
 require 'controllers/indexController.php';
 require 'controllers/noticiasController.php'; ?>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+
+
+
 <!-- slide de imagenes -->
 <main id="hero">
     <div id="carouselHero" class="carousel slide" data-ride="carousel">

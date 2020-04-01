@@ -1,4 +1,5 @@
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+<?php include './variables/metaEtiquetas.php' ?>
 <!-- Codigo del preloader -->
 <style>
     #wrap-preload {
@@ -55,31 +56,8 @@ require './variables/variables.php';
 <html lang="es">
 
 <head>
-    <meta name="keywords" content="Somos una agencia inmobiliaria familiar con tradición de dos generaciones establecida en Bogotá y con más de 40 años de experiencia en el sector, especializada en la administración de inmuebles en arrendamiento, compraventa y arrendamiento sin mandato (corretaje). El trato cercano, honesto y ético durante todo el proceso es nuestra mayor identidad"/>
-    <meta name="description" content="Nuestras alianzas estratégicas con otras inmobiliarias y la implementación de tecnologías nos permiten seguir prestando un servicio íntegro, eficiente y responsable que fortalece día a día la unión y fidelidad con nuestros clientes." />
-    <meta property="og:type"               content="Inmuebles, Inmobiliaria" />
-    <meta property="og:title"              content="Inmueble de Polania Inmobiliaria" />
-    <meta property="og:description"        content="¡Mira este increible inmueble!" />
-    <meta property="og:image"              content="" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="robots" content="noindex" />
-    <meta name="author" content="Dexcon Digital" />
-    <meta name="copyright" content="www.dexcondigital.com" />
-    <title>Polania Inmobiliaria</title>
-    <!-- Stylesheets -->
-    <link href="./variables/variable.php" rel="stylesheet">
-    <link rel="stylesheet" href="./css/bootstrap3.css">
-    <link href="./css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/all.css">
-    <link href="./css/style.css" rel="stylesheet">
-    <link href="./css/responsive.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/owl.carousel.min.css">
-    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="./css/style2.css">
-    <!-- <link rel="shortcut icon" href="" type="image/x-icon">
-    <link rel="icon" href="" type="image/x-icon"> -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
