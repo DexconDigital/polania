@@ -86,7 +86,7 @@ $sql = mysqli_query($con, $qry);
                 <div class="col1">
 
                     <!-- manual de usuario -->
-                    <a href="archivo/Instructivo_Administracion_Asesores.pdf" download="Instructivo Administración Asesores.pdf">
+                    <a href="archivo/Instructivo_Administracion_noticias.pdf" download="Instructivo Administración Noticias.pdf">
                         <li class="tile tile-small tile tile-2 slideTextRight" data-page-type="s-page" data-page-name="random-restored-page">
                             <div>
                                 <p class="icon-arrow-right"></p>

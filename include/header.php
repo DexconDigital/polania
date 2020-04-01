@@ -55,18 +55,19 @@ require './variables/variables.php';
 <html lang="es">
 
 <head>
-    <!-- <meta name="keywords" content="Arriendo de inmuebles, venta de inmuebles, inmobiliaria, arriendo apartamento, arriendo casa, venta apartamentos, venta casa, casas en arriendo, apartamentos en arriendo"/>
-    <meta name="description" content="Inmobiliaria Grr, pagina de ventas, arriendos y avaluos de inmuebles, puedes comprar y arrendar los mejores inmuebles en bogota" />
+    <meta name="keywords" content="Somos una agencia inmobiliaria familiar con tradición de dos generaciones establecida en Bogotá y con más de 40 años de experiencia en el sector, especializada en la administración de inmuebles en arrendamiento, compraventa y arrendamiento sin mandato (corretaje). El trato cercano, honesto y ético durante todo el proceso es nuestra mayor identidad"/>
+    <meta name="description" content="INuestras alianzas estratégicas con otras inmobiliarias y la implementación de tecnologías nos permiten seguir prestando un servicio íntegro, eficiente y responsable que fortalece día a día la unión y fidelidad con nuestros clientes." />
     <meta property="og:type"               content="Inmuebles, Inmobiliaria" />
-    <meta property="og:title"              content="Inmueble de Grr Finca Raiz" />
+    <meta property="og:title"              content="Inmueble de Polania Inmobiliaria" />
     <meta property="og:description"        content="¡Mira este increible inmueble!" />
-    <meta property="og:image"              content="http://www.grrfincaraiz.com.co/grr/images/slide3.png" />
+    <meta property="og:image"              content="" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="robots" content="noindex" />
     <meta name="author" content="Dexcon Digital" />
-    <meta name="copyright" content="www.dexcondigital.com" /> -->
+    <meta name="copyright" content="www.dexcondigital.com" />
     <title>Polania Inmobiliaria</title>
     <!-- Stylesheets -->
+    <link href="./variables/variable.php" rel="stylesheet">
     <link rel="stylesheet" href="./css/bootstrap3.css">
     <link href="./css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="css/all.css">
@@ -157,7 +158,7 @@ require './variables/variables.php';
                                         <div id="menu" class="dropdown-menu"style="background-color: #616161;">
                                             <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck"><i class="fas fa-home"></i> Arrendatarios</a>
                                             <a class="dropdown-item" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck"><i class="fas fa-key"></i> Propietarios</a>
-                                            <a class="dropdown-item" href="#"><i class="fas fa-hand-holding-usd"></i> Pagos PSE</a>
+                                            <a class="dropdown-item" href=" https://www.zonapagos.com/t_Polaniainmobiliaria/pagos.asp" target="_blanck"><i class="fas fa-hand-holding-usd"></i> Pagos PSE</a>
                                         </div>
                                     </li>
 
@@ -168,7 +169,7 @@ require './variables/variables.php';
                                                         echo 'current';
                                                     } ?>"><a href="./contacto.php">Contáctenos</a></li>
                                     <li class="item">
-                                        <a href="#" target="_blank" class="p-0 ml-3"> <img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo_pse" style="width:3.8em;"></a>
+                                        <a href="https://www.zonapagos.com/t_Polaniainmobiliaria/pagos.asp" target="_blank" class="p-0 ml-3"> <img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo_pse" style="width:3.8em;"></a>
                                     </li>
                                 </ul>
                             </div>
@@ -254,7 +255,7 @@ require './variables/variables.php';
                                     <div class="dropdown-menu menu_icon">
                                         <a id="hover" class="dropdown-item" style="color: black" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=2" target="_blanck"><i class="fas fa-home iconos"></i> Arrendatarios</a>
                                         <a id="hover" class="dropdown-item" style="color: black" href="https://www.simiinmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=108&tipo=1" target="_blanck"><i class="fas fa-key iconos"></i> Propietarios</a>
-                                        <a id="hover" class="dropdown-item" style="color: black" href="#"><i class="fas fa-hand-holding-usd iconos"></i> Pagos PSE</a>
+                                        <a id="hover" class="dropdown-item" style="color: black" href=" https://www.zonapagos.com/t_Polaniainmobiliaria/pagos.asp" target="_blanck" ><i class="fas fa-hand-holding-usd iconos"></i> Pagos PSE</a>
                                     </div>
                                 </li>
                                 <li class="item <?php if ($page == 'noticias') {
@@ -264,7 +265,7 @@ require './variables/variables.php';
                                                     echo 'current';
                                                 } ?>"><a href="./contacto.php">Contáctenos</a></li>
                                 <li>
-                                    <a href="#" target="_blank" class="p-0 pt-2"><img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo2_pse" style="width:3.5em;"></a>
+                                    <a href="https://www.zonapagos.com/t_Polaniainmobiliaria/pagos.asp" target="_blank" class="p-0 pt-2"><img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo2_pse" style="width:3.5em;"></a>
                                 </li>
                             </ul>
                     </nav><!-- Main Menu End-->

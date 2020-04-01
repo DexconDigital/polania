@@ -93,7 +93,7 @@ require 'controllers/noticiasController.php'; ?>
                                             <div class="content">
                                                 <h3><a href="" target="_blanck" style="color:inherit;">PAGOS EN LÍNEA</a></h3>
                                             </div>
-                                            <a class="purchased" href="" target="_blanck">Ver más</a>
+                                            <a class="purchased" href="https://www.zonapagos.com/t_Polaniainmobiliaria/pagos.asp" target="_blanck">Ver más</a>
                                         </div>
                                     </div>
                                 </div>
