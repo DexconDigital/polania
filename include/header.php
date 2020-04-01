@@ -56,7 +56,7 @@ require './variables/variables.php';
 
 <head>
     <meta name="keywords" content="Somos una agencia inmobiliaria familiar con tradición de dos generaciones establecida en Bogotá y con más de 40 años de experiencia en el sector, especializada en la administración de inmuebles en arrendamiento, compraventa y arrendamiento sin mandato (corretaje). El trato cercano, honesto y ético durante todo el proceso es nuestra mayor identidad"/>
-    <meta name="description" content="INuestras alianzas estratégicas con otras inmobiliarias y la implementación de tecnologías nos permiten seguir prestando un servicio íntegro, eficiente y responsable que fortalece día a día la unión y fidelidad con nuestros clientes." />
+    <meta name="description" content="Nuestras alianzas estratégicas con otras inmobiliarias y la implementación de tecnologías nos permiten seguir prestando un servicio íntegro, eficiente y responsable que fortalece día a día la unión y fidelidad con nuestros clientes." />
     <meta property="og:type"               content="Inmuebles, Inmobiliaria" />
     <meta property="og:title"              content="Inmueble de Polania Inmobiliaria" />
     <meta property="og:description"        content="¡Mira este increible inmueble!" />
