@@ -364,7 +364,7 @@ require 'variables/variables.php';
                                     <div class="overlay-box">
                                         <div class="overlay-inner">
                                             <div class="content">
-                                                <h3><a href="" target="_blanck" style="color:inherit;">PAGOS EN LÍNEA</a></h3>
+                                                <h3><a href="https://www.zonapagos.com/t_Polaniainmobiliaria/pagos.asp" target="_blanck" style="color:inherit;">PAGOS EN LÍNEA</a></h3>
                                             </div>
                                             <a class="purchased" href="https://www.zonapagos.com/t_Polaniainmobiliaria/pagos.asp" target="_blanck">Ver más</a>
                                         </div>
