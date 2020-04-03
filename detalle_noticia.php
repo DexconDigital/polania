@@ -4,6 +4,9 @@ require_once('controllers/detalle_noticiasController.php'); ?>
 <!-- Contenido -->
 <!-- Cabezera -->
 <!-- Fin cabezera -->
+
+
+
 <section class="mt-5 mb-5">
     <div class="col-12">
         <div class="sec-title centered">

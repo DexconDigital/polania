@@ -35,7 +35,7 @@ try{
     $mail->setFrom('PolaniaInmobiliaria@PolaniaInmobiliaria.com', 'PolaniaInmobiliaria@PolaniaInmobiliaria.com');
     //destinos
     /* $mail->addAddress('info@prosegura.com.co'); */
-    $mail->addAddress('wdsp9898@gmail.com');
+     $mail->addAddress('wdsp9898@gmail.com');
     $mail->addAddress('gestion@dexcondigital.com');
     $mail->addAddress('alexthunder7@gmail.com');
     $mail->addAddress('ceo@dexcondigital.com');

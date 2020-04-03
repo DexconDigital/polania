@@ -1,13 +1,15 @@
 <?php $page = 'inmuebles';
 require 'controllers/detalleInmuebleController.php';
 ?>
+<head>
 <link rel="stylesheet" href="./css/style.css">
 <link rel="stylesheet" href="mapas/leaflet.css" crossorigin="" />
 <!-- Datos para compartir por facebook -->
 <meta property="og:type" content="website" />
     <meta property="og:url" content="<?php echo 'https://'.$_SERVER["HTTP_HOST"].$_SERVER["REQUEST_URI"];?>" />
-    <meta property="og:title" content="<?php echo $r['Tipo_Inmueble'].' en '.$r['Gestion'];?>" />
-    <meta property="og:description" content="Inmueble ubicado en: <?php echo $r['barrio'] .', '. $r['ciudad'].', '.$r['depto'];?> " />
+    <meta property="og:title" content="<?php echo $tipo_inmueble.' en '.$gestion;?>" />
+    <!-- <meta property="og:description" content="Inmueble ubicado en: <?php echo $barrio.', '. $ciudad.', '.$r['depto'];?> " /> -->
+    <meta property="og:description" content="Inmueble ubicado en: <?php echo $barrio.', '. $ciudad.', '.$r['depto'];?> " />
     <meta property="og:image" itemprop="image" content="<?php echo $r['fotos'][0]['foto'];?>" />
     <meta property="og:image:type" content="image/jpeg">
     <meta property="og:image:width" content="300">
@@ -16,7 +18,8 @@ require 'controllers/detalleInmuebleController.php';
 <?php 
 include 'include/header.php';
 ?>
-
+</head>
+<body>
 <style>
     #map {
         height: 300px;
@@ -58,6 +61,7 @@ include 'include/header.php';
         </div>
     </div>
 </section>
+
 <!-- Detalle inmueble -->
 <div class="mt-5 mb-5">
     <div class="auto-container">
@@ -124,9 +128,9 @@ include 'include/header.php';
                             <ul class="row align-items-center pr-0">
                                 <li class="col-sm-12 col-xl-auto mr-auto d-flex justify-content-center btn_ficha"><a class="btn boton-azul" style="font-size:1.8rem; color:white;" href="https://simicrm.app/mcomercialweb/fichas_tecnicas/fichatec3.php?reg=108-<?php echo $co ?>" target="_blank">Imprimir Ficha</a></li>
                                 <li class="col-6 col-md-auto ml-auto m-top font-weight-bold">Compartir por: </li>
-                                <li class="col-2 col-md-auto m-top"><a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.polania.com%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D<?php echo $co; ?>" target="_blank"><img src="images/facebook.png" alt="" style="height: 30px;"></a></li>
-                                <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.polania.com%2Fgrr%2Fdetalle-inmueble.php%3Fco%3D' . $co . '&text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] ?>" target="_blank"><img src="images/twitter.png" alt="" style="height: 30px;"></i></a></li>
-                                <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://wa.me/?text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] . '%20http://www.polania.com/detalle-inmueble.php?co%3d' . $co ?>" target="_blank"><img src="images/whatsapp.png" alt="" style="height: 36px;"></a></li>
+                                <li class="col-2 col-md-auto m-top"><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.polania.co%2F%2Fdetalle-inmueble.php%3Fco%3D<?php echo $co; ?>-108" target="_blank"><img src="images/facebook.png" alt="" style="height: 30px;"></a></li>
+                                <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://twitter.com/intent/tweet?url=http%3A%2F%2Fwww.polania.co%2F%2Fdetalle-inmueble.php%3Fco%3D' . $co . '&text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] ?>" target="_blank"><img src="images/twitter.png" alt="" style="height: 30px;"></i></a></li>
+                                <li class="col-2 col-md-auto m-top"><a href="<?php echo 'https://wa.me/?text=' . $r['Tipo_Inmueble'] . '%20en%20' . $r['Gestion'] . '%20en%20' . $r['ciudad'] . '-' . $r['depto'] . '%20http://www.polania.co/detalle-inmueble.php?co%3d' . $co ?>" target="_blank"><img src="images/whatsapp.png" alt="" style="height: 36px;"></a></li>
                             </ul>
                         </div>
                     </div>
