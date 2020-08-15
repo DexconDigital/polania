@@ -463,7 +463,7 @@ require 'variables/variables.php';
                     <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/inmove.png" alt="" class="img-responsive"></div>
                     <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/SIMI.png" alt="" class="img-responsive"></div>
                     <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/metrocuadrado.png" alt="" class="img-responsive"></div>
-                    <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/protecsa.png" alt="" class=""></div>
+                    <div class="col-sm-12 col-lg-3 col-md-6"><img src="images/zurichseguros.png" alt="" class=""></div>
                 </div>
                 <!-- </div> -->
             </div>

@@ -21,7 +21,8 @@
                     <h2 id="color" style="font-size:30px">Descargar formularios</h2>
                     <div class="separator"></div>
                     <ul class="mt-5">
-                        <li class="mb-4 lista"><span class="color_icono icon far fa-file-pdf"></span><a href="#" target="_blanck" class="ml-4" style="color:inherit;"> Protecsa</a></li>
+                        <li class="mb-4 lista"><span class="color_icono icon far fa-file-pdf"></span><a href="archivos/Formulario-Solicitud-Arrendamiento-Por-Intermedio-de-Inmobiliaria-Personas-Juridicas.pdf (1).pdf" target="_blanck" class="ml-4" style="color:inherit;"> Zurich Persona Jurídica</a></li>
+						<li class="mb-4 lista"><span class="color_icono icon far fa-file-pdf"></span><a href="archivos/Formulario-Solicitud-Arrendamiento-Por-Intermedio-de-Inmobiliaria-Personas-Naturales.pdf (2).pdf" target="_blanck" class="ml-4" style="color:inherit;"> Zurich Persona Natural</a></li>
                     </ul>
                 </div>
             </div>
