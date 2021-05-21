@@ -1,6 +1,6 @@
 <?php $page = 'noticias';
 include 'include/header.php';
-require_once('controllers/detalle_noticiasController.php'); ?>
+//require_once('controllers/detalle_noticiasController.php'); ?>
 <!-- Contenido -->
 <!-- Cabezera -->
 <!-- Fin cabezera -->

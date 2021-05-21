@@ -1,6 +1,6 @@
 <?php $page = 'noticias';
 include 'include/header.php';
-require 'controllers/noticiasController.php'; ?>
+//require 'controllers/noticiasController.php'; ?>
 <!-- Contenido -->
 <!-- Cabezera -->
 <section class="page-title" style="background-image:url(images/banner_blog.jpg);">

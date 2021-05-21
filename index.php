@@ -1,6 +1,6 @@
 <?php $page = 'inicio';
 require 'controllers/indexController.php';
-require 'controllers/noticiasController.php';
+//require 'controllers/noticiasController.php';
 require 'variables/metaEtiquetas.php';?>
 
 
@@ -267,6 +267,7 @@ require 'variables/variables.php';
                                     <a href="https://www.zonapagos.com/t_Polaniainmobiliaria/pagos.asp" target="_blank" class="p-0 pt-2"><img src="./images/logopse.png" alt="" class="img-responsive mx-auto d-block logo2_pse" style="width:3.5em;"></a>
                                 </li>
                             </ul>
+                        </div>
                     </nav><!-- Main Menu End-->
                 </div>
 
