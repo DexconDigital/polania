@@ -2,9 +2,10 @@
 $user = $_SESSION["usuarioactual"];
 $con = Conect();
 $qry = "SELECT * FROM usuarios where usuario ='$user'";
-$sql = mysqli_query($con, $qry);
-$usuario =  mysqli_fetch_array($sql);
-$imagen_inicio = $usuario[15];
+$result = $con->prepare( $qry );
+$result->execute();
+$usuario = $result->fetch( PDO::FETCH_OBJ );
+$imagen_inicio = $usuario->imagen;
 $page = "Inicio";
 $nombre_inmobiliaria = 'Inmobiliaria Alejandro Dominguez Parra - Bucaramanga';
 ?>
@@ -545,12 +546,12 @@ $nombre_inmobiliaria = 'Inmobiliaria Alejandro Dominguez Parra - Bucaramanga';
                         </div>
                         <div class="modal-body">
                             <form>
-                                <input type="hidden" name="id" value="<?php echo $usuario[0]; ?>">
-                                <input type="hidden" name="usuario" value="<?php echo $usuario[1]; ?>">
+                                <input type="hidden" name="id" value="<?php echo $usuario->id_user; ?>">
+                                <input type="hidden" name="usuario" value="<?php echo $usuario->usuario; ?>">
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Contraseña de Usuario:</label>
                                     <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Mi contarseña">
-                                    <!-- <input type="text" class="form-control" name="pass" id="pass" value="<?php echo $usuario[2]; ?>" required> -->
+                                    <!-- <input type="text" class="form-control" name="pass" id="pass" value="<?php echo $usuario->password; ?>" required> -->
                                     <small id="tituloHepl" class="form-text text-muted">Puede ingresar caracteres especiales @$#%&</small>
                                 </div>
                                 <div class="form-group ">
@@ -563,25 +564,25 @@ $nombre_inmobiliaria = 'Inmobiliaria Alejandro Dominguez Parra - Bucaramanga';
                                     <label for="inputPassword" class="col-form-label">Teléfono de Usuario:</label>
                                     <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Teléfono">
                                     <small id="tituloHepl" class="form-text text-muted"> Se recomienda agregar agregar solo numeros </small>
-                                    <!-- <input type="text" class="form-control" name="telefono" id="telefono" value="<?php echo $usuario[4]; ?>" required> -->
+                                    <!-- <input type="text" class="form-control" name="telefono" id="telefono" value="<?php echo $usuario->telefono; ?>" required> -->
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label">Cargo de Usuario:</label>
                                     <input type="text" class="form-control" name="cargo" id="cargo" placeholder="ejemplo: Administrador">
                                     <small id="tituloHepl" class="form-text text-muted"> Es un campo opcional</small>
-                                    <!-- <input type="text" class="form-control" name="cargo" id="cargo" value="<?php echo $usuario[5]; ?>" required> -->
+                                    <!-- <input type="text" class="form-control" name="cargo" id="cargo" value="<?php echo $usuario->cargo; ?>" required> -->
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword" class="col-form-label">Dependencia:</label>
                                     <input type="text" class="form-control" name="dependencia" id="dependencia" placeholder="ejemplo: Área de Sistemas">
                                     <small id="tituloHepl" class="form-text text-muted"> Es un campo opcional </small>
-                                    <!-- <input type="text" class="form-control" name="dependencia" id="dependencia" value="<?php echo $usuario[6]; ?>" required> -->
+                                    <!-- <input type="text" class="form-control" name="dependencia" id="dependencia" value="<?php echo $usuario->dependencia; ?>" required> -->
                                 </div>
                                 <div class="form-group">
                                     <label for="inputPassword" class="col-form-label">Foto de perfil de Usuario:</label>
                                     <img width="70px" height="" src="img/no_image.png">
                                     <small id="tituloHepl" class="form-text text-muted">Esta es su foto de Usuario actualmente</small>
-                                    <!-- <img width="70px" height="" src="<?php echo $usuario[7]; ?>"> -->
+                                    <!-- <img width="70px" height="" src="<?php echo $usuario->imagen; ?>"> -->
                                 </div>
                                 <div class="custom-file">
                                     <label class="custom-file-label" for="customFile">Subir una nueva foto de perfil</label>
