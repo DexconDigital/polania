@@ -1,16 +1,21 @@
-<?php 
-require './conexion2.php';
-$id_inmobiliaria = 16 ;
-sleep(2);
-$usuarios = $mysqli->query("SELECT id_user
-FROM usuarios WHERE id_user = '$id_inmobiliaria' AND usuario = '".$_POST['usuariolg']."' 
-AND password = '".$_POST['passlg']."'");
-if($usuarios->num_rows == 1):
-    $datos = $usuarios->fetch_assoc();
-    echo json_encode(array('error' => false, 'tipo' => $datos['id_user']));
-else:
-    echo json_encode(array('error' => true));
-endif;
-$mysqli->close();
-?>
+<?php
+require './admin/conexion.php';
+$con = conect();
 
+$id_inmobiliaria = 16 ;
+sleep( 2 );
+
+$usuarios = ( "SELECT id_user
+FROM usuarios WHERE id_user = '$id_inmobiliaria' AND usuario = '".$_POST['usuariolg']."' 
+AND password = '".$_POST['passlg']."'" );
+$result = $con->prepare( $usuarios );
+$result->execute();
+$rowcount = $result->rowCount();
+
+if ( $rowcount == 1 ):
+$datos = $result->fetch();
+echo json_encode( array( 'error' => false, 'tipo' => $datos['id_user'] ) );
+else:
+echo json_encode( array( 'error' => true ) );
+endif;
+?>
