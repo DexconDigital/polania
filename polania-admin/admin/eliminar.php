@@ -1,27 +1,25 @@
+<?php
+require_once( "conexion.php" );
+$id = $_GET["id"];
+$con = Conect();
+$consulta = "SELECT * FROM noticias WHERE id = '$id'";
+$resultado = $con->prepare( $consulta );
+$resultado->execute( array( $id ) );
 
-     <?php
-        require_once("conexion.php");
-        $id = $_GET["id"];
-        $con = Conect();
-        $consulta = "SELECT * FROM noticias WHERE id = '$id'";
-        $result = mysqli_query($con, $consulta) or die(mysqli_error($con));
-        while ($field = mysqli_fetch_array($result)) {
-            $imagen = $field['imagen'];
-            $archivo = $field['archivo'];            
-        }
-        unlink($archivo);
-        unlink($imagen);
+while ( $field = $resultado->fetch( PDO::FETCH_ASSOC ) ) {
+    $imagen = $field['imagen'];
+    $archivo = $field['archivo'];
+}
+unlink( $archivo );
+unlink( $imagen );
 
-        $qry = "DELETE FROM noticias WHERE id ='$id'  ";
-        $sql = mysqli_query($con, $qry);
+$qry = "DELETE FROM noticias WHERE id ='$id'  ";
+$resultado = $con->prepare( $qry );
+$resultado->execute( array( $id ) );
 
-        if (!$sql) {
-            echo 'No se logro realizar la peticion';
-        } else {
-            
-             header("location: index.php");
-              
-        }
-        ?>
-    
-    
+if ( !$resultado ) {
+    echo 'No se logro realizar la peticion';
+} else {
+    header( "location: index.php" );
+}
+?>

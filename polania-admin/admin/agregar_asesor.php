@@ -19,21 +19,23 @@ $id_inmo = 15;
 //  die();
 $con = Conect();
 if (isset($destino)) {
-    mysqli_query($con, "INSERT INTO `asesores` (`id`, `nombre`, `telefono`, `correo`, `imagen`, `id_inmobiliaria`, `fecha`, `cargo`, `descripcion`, `celular`) VALUES (NULL, '$nom_asesor', '$tel_asesor', '$cor_asesor', '$destino', '$id_inmo', '$fecha', '$cargo', '', '$cel_asesor');");
+    $sql = ("INSERT INTO `asesores` (`id`, `nombre`, `telefono`, `correo`, `imagen`, `id_inmobiliaria`, `fecha`, `cargo`, `descripcion`, `celular`) VALUES (NULL, '$nom_asesor', '$tel_asesor', '$cor_asesor', '$destino', '$id_inmo', '$fecha', '$cargo', '', '$cel_asesor');");
+    $result = $con->prepare( $sql );
+    $result->execute();
+    
     echo  "<script language='javascript'>
-alert('Asesor Agregado Con Éxito');
-window.location.href='index.php'
-</script>";
+            alert('Asesor Agregado Con Éxito');
+            window.location.href='index.php'
+            </script>";
     
 }
 copy($ruta, $destino);
-mysqli_query($con, "INSERT INTO `asesores` (`id`, `nombre`,`telefono`,`correo`,`imagen`,`id_inmobiliaria`,`fecha`,`cargo`,`celular`) VALUES (NULL, '$nom_asesor','$tel_asesor','$cor_asesor','$destino','$id_inmo','$fecha','$cargo','$cel_asesor'')");
+$sql = ("INSERT INTO `asesores` (`id`, `nombre`,`telefono`,`correo`,`imagen`,`id_inmobiliaria`,`fecha`,`cargo`,`celular`) VALUES (NULL, '$nom_asesor','$tel_asesor','$cor_asesor','$destino','$id_inmo','$fecha','$cargo','$cel_asesor'')");
+$result = $con->prepare( $sql );
+$result->execute();
+
 echo  "<script language='javascript'>
-    alert('Asesor Agregado Con Éxito');
-    window.location.href='index.php'
-    </script>";
-
-
-
-
+        alert('Asesor Agregado Con Éxito');
+        window.location.href='index.php'
+        </script>";
 ?>

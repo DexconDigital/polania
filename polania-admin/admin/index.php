@@ -7,9 +7,13 @@ $user = $_SESSION["usuarioactual"];
 // echo implode( $_SESSION) ; 
 $con = Conect();
 $qry = "SELECT * FROM usuarios where id_user ='$user'";
-$sql = mysqli_query($con, $qry);
-$usuario =  mysqli_fetch_array($sql);
-$imagen_inicio = $usuario[0];
+$resultado=$con->prepare($qry);
+$resultado->execute(array($user));
+// $usuario =  mysqli_fetch_array($resultado);
+$usuario =  $resultado->fetch(PDO::FETCH_ASSOC);
+// echo var_dump($usuario);
+
+$imagen_inicio = $usuario["usuario"];
 $page = "Inicio";
 $nombre_inmobiliaria = 'Polania Inmobiliaria';
 ?>
@@ -17,19 +21,10 @@ $nombre_inmobiliaria = 'Polania Inmobiliaria';
 $id_inmobiliria = 16;
 $con = Conect();
 $qry = "select * from noticias where id_inmobiliaria2 = '$id_inmobiliria' order by id DESC ";
-$sql = mysqli_query($con, $qry);
+$resultado=$con->prepare($qry);
+$resultado->execute(array($id_inmobiliria));
 ?>
-<?php
-$qry = "SELECT * FROM `usuarios` WHERE id_user = '$user'";
-$sql = mysqli_query($con, $qry);
-$usuario =  mysqli_fetch_array($sql);
-?>
-<?php
-$id_inmobiliria = 16;
-$con = Conect();
-$qry = "select * from noticias where id_inmobiliaria2 = '$id_inmobiliria' order by id DESC ";
-$sql = mysqli_query($con, $qry);
-?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,17 +53,19 @@ $sql = mysqli_query($con, $qry);
                     $('#id_edit').val(idnew);
                 });
         }
+
     </script>
 </head>
 
 <style>
-    .form-control:focus{
-    color: #495057;
-    background-color: #fff;
-    border-color: #f04f36;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(240, 79, 54, 0.51);
+    .form-control:focus {
+        color: #495057;
+        background-color: #fff;
+        border-color: #f04f36;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(240, 79, 54, 0.51);
     }
+
 </style>
 
 
@@ -251,7 +248,7 @@ $sql = mysqli_query($con, $qry);
                                 </thead>
                                 <tbody>
                                     <?php
-                                    while ($res =  mysqli_fetch_array($sql)) {
+                                    while ($res =  $resultado->fetch(PDO::FETCH_ASSOC)) {
 
                                         echo '<tr>
                                        <td>' . $res["id"] . '</td>
@@ -354,6 +351,7 @@ $sql = mysqli_query($con, $qry);
                                 $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
                                 $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
                             });
+
                         </script>
                     </div>
                 </div>
@@ -381,7 +379,7 @@ $sql = mysqli_query($con, $qry);
                                 </thead>
                                 <tbody>
                                 <?php
-                                while ($res =  mysqli_fetch_array($sql)) {
+                                while ( $res =  $resultado->fetch(PDO::FETCH_ASSOC) ) {
 
                                     echo '<tr>
                                        <td>' . $res["id"] . '</td>
@@ -656,7 +654,7 @@ $sql = mysqli_query($con, $qry);
                                 </thead>
                                 <tbody>
                                     <?php
-                                    while ($res =  mysqli_fetch_array($sql)) {
+                                    while ($res =  $resultado->fetch(PDO::FETCH_ASSOC) ) {
 
                                         echo '<tr>
                                        <td>' . $res["id"] . '</td>
@@ -786,17 +784,17 @@ $sql = mysqli_query($con, $qry);
                         </div>
                         <div class="modal-body">
                             <form class="form-horizontal" method="post" action="updateperfil.php" enctype="multipart/form-data">
-                                <input type="hidden" name="id" value="<?php echo $usuario[0]; ?>">
-                                <input type="hidden" name="usuario" value="<?php echo $usuario[1]; ?>">
+                                <input type="hidden" name="id" value="<?php echo $usuario['id_user']; ?>">
+                                <input type="hidden" name="usuario" value="<?php echo $usuario['usuario']; ?>">
                                 <div class="form-group ">
                                     <label for="inputPassword" class="col-form-label">Nombre:</label>
-                                    <input type="text" class="form-control" name="usuario" id="usuario" value="<?php echo $usuario[1]; ?>">
+                                    <input type="text" class="form-control" name="usuario" id="usuario" value="<?php echo $usuario['usuario']; ?>">
                                     <small id="tituloHepl" class="form-text text-muted">Puede ingresar letras y numeros, recuerde que si lo cambia debe ingresar con este nuevo usuario</small>
 
                                 </div>
                                 <div class="form-group">
                                     <label for="recipient-name" class="col-form-label">Contraseña:</label>
-                                    <input type="text" class="form-control" name="pass" id="pass" value="<?php echo $usuario[2]; ?>">
+                                    <input type="text" class="form-control" name="pass" id="pass" value="<?php echo $usuario['password']; ?>">
                                     <small id="tituloHepl" class="form-text text-muted">Puede ingresar caracteres especiales @$#%&</small>
                                 </div>
 
@@ -887,6 +885,7 @@ $sql = mysqli_query($con, $qry);
         toolbar: 'undo redo cut copy paste selectall |  fontsizeselect | bold italic underline forecolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | print link',
         fontsize_formats: '8pt 10pt 12pt 13pt 14pt 16pt 18pt 20pt 22pt 24pt 26pt 28pt 30pt 32pt 34pt 36pt 42pt'
     });
+
 </script>
 <script>
     // Add the following code if you want the name of the file appear on select
@@ -894,6 +893,7 @@ $sql = mysqli_query($con, $qry);
         var fileName = $(this).val().split("\\").pop();
         $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
     });
+
 </script>
 
 </html>

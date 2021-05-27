@@ -5,8 +5,9 @@ include 'layout/layout.php';
 $user =$_SESSION["usuarioactual"];
 $con = Conect();
 $qry = "SELECT * FROM `usuarios` WHERE id_user = '$user'";
-$sql = mysqli_query($con, $qry);
-$usuario =  mysqli_fetch_array($sql);
+$result = $con->prepare( $qry );
+$result->execute();
+$usuario = $result->fetch( PDO::FETCH_OBJ );
 ?>
 
 <style>
