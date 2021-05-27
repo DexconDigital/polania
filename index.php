@@ -1,6 +1,6 @@
 <?php $page = 'inicio';
 require 'controllers/indexController.php';
-//require 'controllers/noticiasController.php';
+require 'controllers/noticiasController.php';
 require 'variables/metaEtiquetas.php';?>
 
 
