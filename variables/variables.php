@@ -43,8 +43,8 @@ $datos_contacto = [
 			"icono" => "fas fa-map-marker-alt",
 		],
 		"telefono_fijo" => [
-			"link"=> "0317023437",
-			"imprimir" => "+57 (1) 702 3437 ",
+			"link"=> "6017023437",
+			"imprimir" => "(601) 702 3437 ",
 			"icono" => "fas fa-phone-alt",
 		],
 		"celular" => [
